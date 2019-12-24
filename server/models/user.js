@@ -10,6 +10,7 @@ const userSchema = new Schema({
     lastName: String,
     email: String,
     password: String,
+    credibility: Number,
     status: [statusSchema]
 });
 
