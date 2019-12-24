@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const hubSchema = require('./hub').schema;
+const postSchema = require('./post').schema;
 
-const neighborhoodSchema = new Schema({
+const districtSchema = new Schema({
     name: String,
-    districtId: String
+    hubs: [hubSchema],
+    posts: [postSchema]
 });
 
-module.exports = mongoose.model('Neighborhood', neighborhoodSchema);
+module.exports = mongoose.model('District', districtSchema);
