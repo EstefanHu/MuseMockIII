@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const statusSchema = new Schema({
-    content: String
-})
+const Schema = mongoose.Schema;\
+const postSchema = require('./post');
 
 const userSchema = new Schema({
     firstName: String,
@@ -11,7 +8,8 @@ const userSchema = new Schema({
     email: String,
     password: String,
     credibility: Number,
-    status: [statusSchema]
+    posts: [postSchema],
+    archive: [postSchema]
 });
 
 module.exports = mongoose.model('User', userSchema);
