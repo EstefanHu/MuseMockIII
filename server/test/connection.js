@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 before(done => {
     // Connects to db creating if doesnt exist
     const db = 'testaroo';
-    mongoose.connect(`mongodb://localhost/${db}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+    mongoose.connect(`mongodb://localhost/${db}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 
     mongoose.connection.once('open', () => {
         console.log(`connection has been established to ${db}`);
