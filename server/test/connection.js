@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Connect to db before test run
 before(done => {
     // Connects to db creating if doesnt exist
-    const db = 'testaroo';
+    const db = 'MuseDB';
     mongoose.connect(`mongodb://localhost/${db}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 
     mongoose.connection.once('open', () => {
@@ -12,14 +12,6 @@ before(done => {
         done();
     }).on('err', err => {
         console.log('Connection Error: ' + err);
-        done();
-    });
-});
-
-// Runs before each test
-beforeEach(done => {
-    // Drops users table
-    mongoose.connection.collections.users.drop(() => {
         done();
     });
 });

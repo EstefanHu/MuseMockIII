@@ -3,21 +3,17 @@ const User = require('../models/user');
 
 describe('Base User tests', () => {
 
-  let newUser;
+  let newUser = new User({
+    firstName: 'Estefan',
+    lastName: 'Hu',
+    email: 'estefanhu@gmail.com',
+    credibility: 0,
+    posts: [],
+    archive: []
+  });
 
-  beforeEach(done => {
-    newUser = new User({
-      firstName: 'Estefan',
-      lastName: 'Hu',
-      email: 'estefanhu@gmail.com',
-      credibility: 0,
-      posts: [],
-      archive: []
-    });
-  
-    newUser.save().then(() => {
-      done();
-    });
+  newUser.save().then(() => {
+    done();
   });
   
   it('Saving User to the database', done => {
@@ -26,9 +22,9 @@ describe('Base User tests', () => {
   });
 
   it('Updating User from the database', done => {
-    User.findOneAndUpdate({firstName: 'Estefan'}, {firstName: 'Justin'}).then(() => {
+    User.findOneAndUpdate({firstName: 'Estefan'}, {lastName: 'Justin'}).then(() => {
       User.findOne({_id: newUser._id}).then(result => {
-        assert(result.firstName === 'Justin');
+        assert(result.lastName === 'Justin');
         done();
       });
     });
