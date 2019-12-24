@@ -17,9 +17,9 @@ before(done => {
 });
 
 // Runs before each test
-// beforeEach(done => {
-//     // Drops users table
-//     mongoose.connection.collections.users.drop(() => {
-//         done();
-//     });
-// });
+beforeEach(done => {
+    // Drops users table
+    mongoose.connection.collections.users.drop(() => {
+        done();
+    });
+});
