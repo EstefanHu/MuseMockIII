@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const districtSchema = require('./district').schema;
+const sectorSchema = require('./sector').schema;
 const postSchema = require('./post').schema;
 
 const citySchema = new Schema({
     name: String,
-    districts: [districtSchema],
+    sectors: [sectorSchema],
     posts: [postSchema]
 });
 

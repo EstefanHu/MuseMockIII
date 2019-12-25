@@ -1,17 +1,17 @@
 const assert = require('assert');
 const mongoose = require('mongoose');
-const City = mongoose.model('City', '../models/city');
-// const District = mongoose.model('../models/district');
-// const Neighborhood = mongoose.model('../models/neighborhood');
-// const Hub = mongoose.model('../models/hub');
-// const User = mongoose.model('../models/user');
+const City = require('../models/city');
+const Sector = require('../models/sector');
+const Neighborhood = require('../models/neighborhood');
+const Hub = require('../models/hub');
+const User = require('../models/user');
 
 describe('Setting up application documents', () => {
 
     it('City document established', done => {
         let newCity = new City({
             name: 'Seatle',
-            districts: [],
+            sectors: [],
             posts: []
         });
 
@@ -21,16 +21,16 @@ describe('Setting up application documents', () => {
         });
     });
 
-    it('District document established', done => {
-        let newDistrict = new District({
+    it('Sector document established', done => {
+        let newSector = new Sector({
             name: 'Four',
             neighborhoods: [],
             hubs: [],
             posts: []
         });
 
-        newDistrict.save().then(() => {
-            assert(newDistrict.isNew === false);
+        newSector.save().then(() => {
+            assert(newSector.isNew === false);
             done();
         });
     });

@@ -1,6 +1,6 @@
 const graphql = require('graphql');
 const City = require('../models/city');
-const District = require('../models/district');
+const Sector = require('../models/sector');
 const Neighborhood = require('../models/neighborhood');
 const Hub = require('../models/hub');
 const User = require('../models/user');
@@ -25,8 +25,8 @@ const CityType = new GraphQLObjectType({
     })
 });
 
-const DistrictType = new GraphQLObjectType({
-    name: 'District',
+const SectorType = new GraphQLObjectType({
+    name: 'Sector',
 
     fields: () => ({
         id: {type: GraphQLID},
