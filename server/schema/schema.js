@@ -20,8 +20,24 @@ const CityType = new GraphQLObjectType({
     name: 'City',
 
     fields: () => ({
-        id: {type: GraphQLId},
-        name: {type: GraphQLString}
+        id: {type: GraphQLID},
+        name: {type: GraphQLString},
+        sectors: {
+            type: new GraphQLList(SectorType),
+            resolve(parent, args) {
+                return Sector.find({
+                    cityId: parent.id
+                });
+            }
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return Post.find({
+                    cityId: parent.id
+                });
+            }
+        }
     })
 });
 
@@ -30,7 +46,31 @@ const SectorType = new GraphQLObjectType({
 
     fields: () => ({
         id: {type: GraphQLID},
-        name: {type: GraphQLString}
+        name: {type: GraphQLString},
+        neighborhoods: {
+            type: new GraphQLList(NeighborhoodType),
+            resolve(parent, args) {
+                return Neighborhood.find({
+                    sectorId: parent.id
+                });
+            }
+        },
+        hubs: {
+            type: new GraphQLList(HubType),
+            resolve(parent, args) {
+                return Hub.find({
+                    sectorId: parent.id
+                });
+            }
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return Post.find({
+                    sectorId: parent.id
+                });
+            }
+        }
     })
 });
 
@@ -39,7 +79,23 @@ const NeighborhoodType = new GraphQLObjectType({
 
     fields: () => ({
         id: {type: GraphQLID},
-        name: {type: GraphQLString}
+        name: {type: GraphQLString},
+        hubs: {
+            type: new GraphQLList(HubType),
+            resolve(parent, args) {
+                return Hub.find({
+                    neighborhoodId: parent.id
+                });
+            }
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return Post.find({
+                    neighborhoodId: parent.id
+                });
+            }
+        }
     })
 });
 
@@ -48,7 +104,15 @@ const HubType = new GraphQLObjectType({
 
     fields: () => ({
         id: {type: GraphQLID},
-        name: {type: GraphQLString}
+        name: {type: GraphQLString},
+        members: {
+            type: new GraphQLList(UserType),
+            resolve(parent, args) {
+                return User.find({
+                    membership: parent.id
+                });
+            }
+        }
     })
 });
 
@@ -60,7 +124,23 @@ const UserType = new GraphQLObjectType({
         firstName: {type: GraphQLString},
         lastName: {type: GraphQLString},
         email: {type: GraphQLString},
-        password: {type: GraphQLString}
+        password: {type: GraphQLString},
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return Post.find({
+                    userId: parent.id
+                });
+            }
+        },
+        archive: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return Post.find({
+                    userId: parent.id
+                });
+            }
+        }
     })
 });
 
@@ -85,6 +165,34 @@ const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     
     fields: {
+        city: {
+            type: CityType,
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return City.findById(args.id);
+            }
+        },
+        sector: {
+            type: SectorType,
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return Sector.findById(args.id);
+            }
+        },
+        neighborhood: {
+            type: NeighborhoodType,
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return Neighborhood.findById(args.id);
+            }
+        },
+        hub: {
+            type: HubType,
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return Hub.findById(args.id);
+            }
+        },
         user: {
             type: UserType,
             args: {id: {type: GraphQLID}},
