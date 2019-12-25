@@ -1,5 +1,5 @@
 'use strict';
-const express = requir('express');
+const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
@@ -15,14 +15,32 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }));
 
-const uri = process.env.DB_CONNECTION;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+const DB_CONNECTION = 'MuseDB';
+mongoose.connect(`mongodb://localhost/${DB_CONNECTION}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 
-const connection = mongoose.connection;
-connection.once('open', () => {
-    console.log("MongoDB database connection established successfully");
+mongoose.connection.once('open', () => {
+    console.log(`connection has been established to ${DB_CONNECTION}`);
+}).on('err', err => {
+    console.log('Connection Error: ' + err);
 });
 
-app.listen(4000, () => {
-    console.log('Server is running on port 4000');
+app.get('/', (req,res) => {
+    try {
+
+    } catch(err) {
+        res.type('text').status(500).send('Error: ' + err);
+    }
+});
+
+app.get('/city', (req, res) => {
+    try{
+
+    } catch(err) {
+        res.type('text').status(500).send('Error: ' + err);
+    }
+});
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });

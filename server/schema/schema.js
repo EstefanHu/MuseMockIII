@@ -1,4 +1,8 @@
 const graphql = require('graphql');
+const City = require('../models/city');
+const District = require('../models/district');
+const Neighborhood = require('../models/neighborhood');
+const Hub = require('../models/hub');
 const User = require('../models/user');
 const Post = require('../models/post');
 
@@ -11,6 +15,42 @@ const {
     GraphQLList,
     GraphQLNonNull
 } = graphql;
+
+const CityType = new GraphQLObjectType({
+    name: 'City',
+
+    fields: () => ({
+        id: {type: GraphQLId},
+        name: {type: GraphQLString}
+    })
+});
+
+const DistrictType = new GraphQLObjectType({
+    name: 'District',
+
+    fields: () => ({
+        id: {type: GraphQLID},
+        name: {type: GraphQLString}
+    })
+});
+
+const NeighborhoodType = new GraphQLObjectType({
+    name: 'Neighborhood',
+
+    fields: () => ({
+        id: {type: GraphQLID},
+        name: {type: GraphQLString}
+    })
+});
+
+const HubType = new GraphQLObjectType({
+    name: 'Hub',
+
+    fields: () => ({
+        id: {type: GraphQLID},
+        name: {type: GraphQLString}
+    })
+});
 
 const UserType = new GraphQLObjectType({
     name: 'User',
@@ -104,7 +144,7 @@ const Mutation = new GraphQLObjectType({
     }
 });
 
-module.exports = new GraphQLID({
+module.exports = new GraphQLSchema({
     query: RootQuery,
     mutation: Mutation
 });
