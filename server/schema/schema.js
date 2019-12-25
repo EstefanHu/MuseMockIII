@@ -22,6 +22,7 @@ const CityType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         sectors: {
             type: new GraphQLList(SectorType),
             resolve(parent, args) {
@@ -47,6 +48,7 @@ const SectorType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         neighborhoods: {
             type: new GraphQLList(NeighborhoodType),
             resolve(parent, args) {
@@ -80,6 +82,7 @@ const NeighborhoodType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         hubs: {
             type: new GraphQLList(HubType),
             resolve(parent, args) {
@@ -105,6 +108,7 @@ const HubType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         members: {
             type: new GraphQLList(UserType),
             resolve(parent, args) {
@@ -125,6 +129,7 @@ const UserType = new GraphQLObjectType({
         lastName: {type: GraphQLString},
         email: {type: GraphQLString},
         password: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         posts: {
             type: new GraphQLList(PostType),
             resolve(parent, args) {
@@ -152,6 +157,7 @@ const PostType = new GraphQLObjectType({
         title: {type: GraphQLString},
         description: {type: GraphQLString},
         content: {type: GraphQLString},
+        credibility: {type: GraphQLInt},
         user: {
             type: UserType,
             resolve(parent, args) {

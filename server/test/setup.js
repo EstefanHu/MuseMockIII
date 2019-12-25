@@ -8,11 +8,7 @@ const User = require('../models/user');
 
 describe('Setting up application documents', () => {
 
-    before(done => {
-        console.log('Hello');
-    });
-
-    it('City document established', done => {
+     it('City document established', done => {
         let newCity = new City({
             name: 'Seatle',
             sectors: [],
