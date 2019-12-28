@@ -7,7 +7,8 @@ const postSchema = require('./post').schema;
 const sectorSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     neighborhoods: [neighborhoodSchema],
     hubs: [hubSchema],

@@ -4,7 +4,11 @@ const sectorSchema = require('./sector').schema;
 const postSchema = require('./post').schema;
 
 const citySchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
     sectors: [sectorSchema],
     posts: [postSchema]
 });
