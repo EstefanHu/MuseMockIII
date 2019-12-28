@@ -5,7 +5,10 @@ const hubSchema = require('./hub').schema;
 const postSchema = require('./post').schema;
 
 const sectorSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     neighborhoods: [neighborhoodSchema],
     hubs: [hubSchema],
     posts: [postSchema]

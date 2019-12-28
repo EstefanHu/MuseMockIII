@@ -5,31 +5,31 @@ const postSchema = require('./post').schema;
 const userSchema = new Schema({
     firstName: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
         minlength: 2
     },
     lastName: {
         type: String, 
-        require: true,
+        required: true,
         trim: true,
         minlength: 2
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
         trim: true,
         minlength: 5
     },
     password: {
         type: String,
-        require: true,
+        required: true,
         minlength: 8
     },
     createdAt: {
         type: Date,
-        require: true
+        required: true
     },
     credibility: Number,
     posts: [postSchema],
