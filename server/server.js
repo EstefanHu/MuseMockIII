@@ -27,6 +27,8 @@ mongoose.connection.once('open', () => {
     console.log('Connection Error: ' + err);
 });
 
+// Might want to break routes into deligated router foulders useing router from require('express').Router()
+
 app.get('/', (req,res) => {
     try {
 
