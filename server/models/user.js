@@ -33,7 +33,7 @@ const userSchema = new Schema({
     },
     credibility: Number,
     posts: [postSchema],
-    archive: [postScfhema]
+    archive: [postSchema]
 }, {
     timestamps: true
 });
