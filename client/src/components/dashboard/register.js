@@ -7,7 +7,7 @@ class Register extends Component {
         this.onChangeFirstName = this.onChangeFirstName.bind(this);
         this.onChangeLastName = this.onChangeLastName.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onChangePassword = this.onChangeFirstName.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -54,7 +54,7 @@ class Register extends Component {
 
         console.log(user);
 
-        window.location = '/dashboard';
+        window.location = '/';
     }
 
     render() {
