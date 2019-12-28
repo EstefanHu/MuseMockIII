@@ -20,6 +20,9 @@ class Navbar extends Component {
                         <li>
                             <Link to="/create">Write</Link>
                         </li>
+                        <li>
+                            <Link to="/test">Test</Link>
+                        </li>
                     </ul>
                 </span>
             </nav>

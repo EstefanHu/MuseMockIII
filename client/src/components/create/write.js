@@ -53,7 +53,7 @@ class Write extends Component {
                 <h2>Compose Work</h2>
                 <form onSubmit={this.onSubmit}>
                     <input placeholder="Title" type="text" value={this.state.title} onChange={this.onChangeTitle} required />
-                    <input placeholder="Description" type="text" value={this.state.description} onChange={this.onCHangeDescription} required />
+                    <input placeholder="Description" type="text" value={this.state.description} onChange={this.onChangeDescription} required />
                     <textarea placeholder="Write here..." value={this.state.content} onChange={this.onChangeContent} required />
                     <input type="submit" value="Publish!" />
                 </form>

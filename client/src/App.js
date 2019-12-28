@@ -7,6 +7,7 @@ import dashboard from './components/dashboard/dashboard';
 import feed from './components/feed/feed'; // likely will change
 import profile from './components/profile/profile';
 import create from './components/create/create';
+import test from './components/testing/test';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/' exact component={feed}/>
       <Route path='/profile' exact component={profile}/>
       <Route path='/create' exact component={create}/>
+      <Route path='/test' exact component={test}/>
     </Router>
   );
 }
