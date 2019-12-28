@@ -4,7 +4,11 @@ const hubSchema = require('./hub').schema;
 const postSchema = require('./post').schema;
 
 const districtSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
     hubs: [hubSchema],
     posts: [postSchema]
 });
