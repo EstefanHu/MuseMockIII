@@ -4,7 +4,11 @@ const userSchema = require('./user').schema;
 const postSchema = require('./post').schema;
 
 const hubSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
     admins: [userSchema],
     members: [userSchema],
     posts: [postSchema]
