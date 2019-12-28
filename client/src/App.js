@@ -1,22 +1,14 @@
 import React from 'react';
-import ApolloClient from 'apollo-boost';
-import {ApolloProvider} from 'react-apollo';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-
-import Dashboard from './components/dashboard';
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
-});
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <Router>
       <div className="App">
-        <h1>Hello Muse</h1>
-        <Dashboard/>
+        Hello World
       </div>
-    </ApolloProvider>
+    </Router>
   );
 }
 
