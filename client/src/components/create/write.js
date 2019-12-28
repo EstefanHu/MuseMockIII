@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class Write extends Component {
     constructor(props) {
         super(props);
-        
+
+        this.onChangeTitle = this.onChangeTitle.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeContent = this.onChangeContent.bind(this);
+
         this.state = {
             title: '',
             description: '',
@@ -57,3 +61,5 @@ class Write extends Component {
         )
     }
 }
+
+export default Write;
