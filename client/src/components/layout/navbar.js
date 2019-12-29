@@ -8,7 +8,7 @@ class Navbar extends Component {
         super(props);
 
         this.state = {
-            isLoggedIn: true
+            isLoggedIn: this.props.isLoggedIn
         }
     }
 

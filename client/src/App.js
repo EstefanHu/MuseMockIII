@@ -10,10 +10,18 @@ import create from './components/create/create';
 import settings from './components/settings/settings';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoggedIn: false
+    }
+  }
+  
   render() {
     return(
       <Router>
-        <Navbar />
+        <Navbar isLoggedIn={this.state.isLoggedIn} />
         <main>
           <Route path='/dashboard' exact component={dashboard}/>
           <Route path='/' exact component={feed}/>
