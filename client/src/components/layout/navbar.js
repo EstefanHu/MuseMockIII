@@ -18,9 +18,7 @@ class Navbar extends Component {
                 <Link to="/"><h2>Muse</h2></Link>
                 <span>
                     <ul>
-                        <li>
-                            <Link to="/dashboard">DASHBOARD</Link>
-                        </li>
+                        <li><Link to="/dashboard">DASHBOARD</Link></li>
                         <NavLinks isLoggedIn={this.state.isLoggedIn} />
                     </ul>
                 </span>
