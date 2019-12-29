@@ -13,11 +13,13 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Route path='/dashboard' exact component={dashboard}/>
-      <Route path='/' exact component={feed}/>
-      <Route path='/profile' exact component={profile}/>
-      <Route path='/create' exact component={create}/>
-      <Route path='/settings' exact component={settings}/>
+      <main>
+        <Route path='/dashboard' exact component={dashboard}/>
+        <Route path='/' exact component={feed}/>
+        <Route path='/profile' exact component={profile}/>
+        <Route path='/create' exact component={create}/>
+        <Route path='/settings' exact component={settings}/>
+      </main>
     </Router>
   );
 }
