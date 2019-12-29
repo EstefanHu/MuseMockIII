@@ -15,8 +15,15 @@ class Navbar extends Component {
     render() {
         return (
             <nav>
-                <Link to="/">Muse</Link>
-                <NavLinks isLoggedIn={this.state.isLoggedIn} />
+                <Link to="/"><h2>Muse</h2></Link>
+                <span>
+                    <ul>
+                        <li>
+                            <Link to="/dashboard">DASHBOARD</Link>
+                        </li>
+                        <NavLinks isLoggedIn={this.state.isLoggedIn} />
+                    </ul>
+                </span>
                 <Link to="/settings">Settings</Link>
             </nav>
         );
