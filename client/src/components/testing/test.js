@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Counter from './counter';
+import FunctionClick from './functionClick';
+import ClassClick from './classClick';
 
 class Test extends Component {
     render() {
@@ -8,6 +10,8 @@ class Test extends Component {
             <div>
                 <h1>Hello From Test</h1>
                 <Counter />
+                <FunctionClick />
+                <ClassClick />
             </div>
         )
     }
