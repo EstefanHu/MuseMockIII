@@ -54,14 +54,14 @@ class App extends Component {
   }
 }
 
-const auth = {
+const fakeAuth = {
   isAuthenticated: false,
   authenticate(cb) {
-    auth.isAuthenticated = true;
+    fakeAuth.isAuthenticated = true;
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
-    auth.isAuthenticated = false;
+    fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
   }
 };
@@ -69,12 +69,12 @@ const auth = {
 function AuthButton() {
   let history = useHistory();
 
-  return auth.isAuthenticated ? (
+  return fakeAuth.isAuthenticated ? (
     <p>
       Welcome!{" "}
       <button
         onClick={() => {
-          auth.signout(() => history.push("/"));
+          fakeAuth.signout(() => history.push("/"));
         }}
       >
         Sign out
@@ -92,7 +92,7 @@ function PrivateRoute({ children, ...rest }) {
     <Route
       {...rest}
       render={({ location }) =>
-        auth.isAuthenticated ? (
+      fakeAuth.isAuthenticated ? (
           children
         ) : (
           <Redirect
@@ -105,6 +105,19 @@ function PrivateRoute({ children, ...rest }) {
       }
     />
   );
+}
+
+const Public = () => <h3>Public</h3>
+const Protected = () => <h3>Protected</h3>
+
+class Login extends Component {
+  render() {
+    return (
+      <div>
+        LOGIN
+      </div>
+    )
+  }
 }
 
 export default App;
