@@ -23,7 +23,7 @@ class App extends Component {
 
     this.state = {
       isLoggedIn: false,
-      posts: [],
+      headerPosts: [],
     }
   }
 
@@ -43,12 +43,12 @@ class App extends Component {
   }
 
   processPosts(response) {
-    let headerPosts = [];
+    let responsePosts = [];
     for (let i = 0; i < response.length; i++) {
-      headerPosts.push(response[i]);
+      responsePosts.push(response[i]);
     }
     this.setState({
-      posts: headerPosts
+      headerPost: responsePosts
     });
   }
 
@@ -63,7 +63,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route path='/dashboard' exact>
-              <Dashboard />
+              <Dashboard headerPost={this.state.headerPost} />
             </Route>
             <PrivateRoute path='/' exact>
               <Feed />
