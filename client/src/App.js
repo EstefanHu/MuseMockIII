@@ -25,7 +25,26 @@ class App extends Component {
       isLoggedIn: false
     }
   }
-  
+
+  componentDidMount() {
+    fetch('https://localhost:4000')
+      .then(checkStatus)
+      .then(res => res.json())
+      .then(processPosts)
+      .catch(handleError);
+  }
+
+  checkStatus(response) {
+    if (!response.ok) { // response.status >= 200 && response.status < 300
+      throw Error("Error in request: " + response.statusText);
+    }
+    return response;
+  }
+
+  handleError(error) {
+    console.log('Error: ' + error);
+  } 
+
   render() {
     return(
       <Router>
@@ -44,7 +63,7 @@ class App extends Component {
             <PrivateRoute path='/create' exact>
               <Create />
             </PrivateRoute>
-            <PrivateRoute path='settings' exact>
+            <PrivateRoute path='/settings' exact>
               <Settings />
             </PrivateRoute>
           </Switch>

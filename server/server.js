@@ -31,7 +31,7 @@ mongoose.connection.once('open', () => {
 
 app.get('/', (req,res) => {
     try {
-
+        res.json({"Test": "Hello World"});
     } catch(err) {
         res.type('text').status(500).send('Error: ' + err);
     }
