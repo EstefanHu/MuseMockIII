@@ -6,10 +6,9 @@ class Feed extends Component {
     render() {
         return (
             <>
-                <h1>hello feed</h1>
-                this.props.posts.map(post => (
-                    <Post post={post} />
-                ));
+                {this.props.posts.map(item => (
+                    <Post post={item} />
+                ))}
             </>
         )
     }
