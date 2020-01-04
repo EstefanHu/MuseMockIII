@@ -46,15 +46,15 @@ class Dashboard extends Component {
     render() {
         const { error, isLoaded, headerPosts } = this.state;
         if (error) {
-        return <>Error: {error.message}</>;
+            return <>Error: {error.message}</>;
         } else if (!isLoaded) {
-        return <>Loading...</>;
+            return <>Loading...</>;
         } else {
-        return (
-            <>
-                <Feed posts={this.state.headerPosts} />
-            </>
-        );
+            return (
+                <>
+                    <Feed posts={this.state.headerPosts} />
+                </>
+            );
         }
     }
 }
