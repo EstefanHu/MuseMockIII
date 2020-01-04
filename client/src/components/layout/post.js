@@ -5,7 +5,7 @@ class Post extends Component {
         return (
             <article>
                 <h3>{this.props.post.title}</h3>
-                <p>{this.props.post.content}</p>
+                <p>{this.props.post.description}</p>
             </article>
         )
     }
