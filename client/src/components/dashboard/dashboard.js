@@ -53,7 +53,6 @@ class Dashboard extends Component {
         return (
             <>
                 <Feed posts={this.state.headerPosts} />
-                <Register />
             </>
         );
         }
