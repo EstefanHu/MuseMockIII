@@ -7,17 +7,61 @@ class Dashboard extends Component {
         super(props);
 
         this.state = {
-            
+            error: null,
+            isLoaded: false,
+            headerPosts: []
         }
     }
 
+    processPosts(response) {
+        let responsePosts = [];
+        for (let i = 0; i < response.length; i++) {
+            responsePosts.push(response[i]);
+        }
+        this.setState({
+            headerPosts: responsePosts
+        });
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:4000')
+        .then(res => res.json())
+        .then(
+            res => {
+            this.setState({
+                isLoaded: true,
+                headerPosts: res.posts
+            });
+            },
+            error => {
+            this.setState({
+                isLoaded: true,
+                error
+            });
+            }
+        )
+    }
+
     render() {
+        const { error, isLoaded, headerPosts } = this.state;
+        if (error) {
+        return <div>Error: {error.message}</div>;
+        } else if (!isLoaded) {
+        return <div>Loading...</div>;
+        } else {
         return (
             <>
-                <h1>Hello from Dashboard</h1>
+                <ul>
+                {headerPosts.map(post => (
+                    <li key={post.id}>
+                        {post.title} | {post.content}
+                    </li>
+                ))}
+                </ul>
                 <Register />
             </>
-        )
+        );
+        }
     }
 }
 

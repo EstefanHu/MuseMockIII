@@ -23,38 +23,9 @@ class App extends Component {
 
     this.state = {
       isLoggedIn: false,
-      headerPosts: [],
     }
   }
 
-  componentDidMount() {
-    fetch('https://localhost:4000')
-      .then(checkStatus)
-      .then(res => res.json())
-      .then(processPosts)
-      .catch(handleError);
-  }
-
-  checkStatus(response) {
-    if (!response.ok) { // response.status >= 200 && response.status < 300
-      throw Error("Error in request: " + response.statusText);
-    }
-    return response;
-  }
-
-  processPosts(response) {
-    let responsePosts = [];
-    for (let i = 0; i < response.length; i++) {
-      responsePosts.push(response[i]);
-    }
-    this.setState({
-      headerPost: responsePosts
-    });
-  }
-
-  handleError(error) {
-    console.log('Error: ' + error);
-  } 
 
   render() {
     return(
@@ -63,7 +34,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route path='/dashboard' exact>
-              <Dashboard headerPost={this.state.headerPost} />
+              <Dashboard />
             </Route>
             <PrivateRoute path='/' exact>
               <Feed />
