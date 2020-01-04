@@ -53,9 +53,7 @@ class Dashboard extends Component {
             <>
                 <ul>
                     {headerPosts.map(post => (
-                        <li key={post.id}>
-                            {post.title} | {post.content}
-                        </li>
+                        <Post post={post} />
                     ))}
                 </ul>
                 <Register />

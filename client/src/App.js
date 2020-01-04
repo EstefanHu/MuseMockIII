@@ -12,7 +12,7 @@ import './App.css';
 
 import Navbar from './components/layout/navbar';
 import Dashboard from './components/dashboard/dashboard';
-import Feed from './components/feed/feed'; // likely will change
+import Feed from './components/home/home'; // likely will change
 import Profile from './components/profile/profile';
 import Create from './components/create/create';
 import Settings from './components/settings/settings';
