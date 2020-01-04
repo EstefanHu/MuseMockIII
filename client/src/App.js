@@ -22,7 +22,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
+      posts: [],
     }
   }
 
@@ -39,6 +40,16 @@ class App extends Component {
       throw Error("Error in request: " + response.statusText);
     }
     return response;
+  }
+
+  processPosts(response) {
+    let headerPosts = [];
+    for (let i = 0; i < response.length; i++) {
+      headerPosts.push(response[i]);
+    }
+    this.setState({
+      posts: headerPosts
+    });
   }
 
   handleError(error) {
