@@ -52,7 +52,7 @@ class Dashboard extends Component {
         } else {
             return (
                 <>
-                    <Feed posts={this.state.headerPosts} />
+                    <Feed posts={headerPosts} />
                 </>
             );
         }
