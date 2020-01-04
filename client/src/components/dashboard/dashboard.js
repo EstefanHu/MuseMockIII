@@ -24,7 +24,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000')
+        fetch('httpx://localhost:4000/')
         .then(res => res.json())
         .then(
             res => {
@@ -45,18 +45,18 @@ class Dashboard extends Component {
     render() {
         const { error, isLoaded, headerPosts } = this.state;
         if (error) {
-        return <div>Error: {error.message}</div>;
+        return <>Error: {error.message}</>;
         } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <>Loading...</>;
         } else {
         return (
             <>
                 <ul>
-                {headerPosts.map(post => (
-                    <li key={post.id}>
-                        {post.title} | {post.content}
-                    </li>
-                ))}
+                    {headerPosts.map(post => (
+                        <li key={post.id}>
+                            {post.title} | {post.content}
+                        </li>
+                    ))}
                 </ul>
                 <Register />
             </>
