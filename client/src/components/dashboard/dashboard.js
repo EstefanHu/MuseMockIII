@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Feed from '../layout/feed';
 import Register from './register';
 
 class Dashboard extends Component {
@@ -51,11 +52,7 @@ class Dashboard extends Component {
         } else {
         return (
             <>
-                <ul>
-                    {headerPosts.map(post => (
-                        <Post post={post} />
-                    ))}
-                </ul>
+                <Feed posts={this.state.headerPosts} />
                 <Register />
             </>
         );
