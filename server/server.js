@@ -16,10 +16,7 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 const DB_CONNECTION = 'MuseDB';
-mongoose.connect(`mongodb://localhost/${DB_CONNECTION}`, { useNewUrlParser: true,
-                                                            useUnifiedTopology: true,
-                                                            useCreateIndex: true,
-                                                            useFindAndModify: false });
+mongoose.connect(`mongodb://localhost/${DB_CONNECTION}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 
 mongoose.connection.once('open', () => {
     console.log(`connection has been established to ${DB_CONNECTION}`);
