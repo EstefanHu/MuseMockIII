@@ -42,6 +42,13 @@ app.get('/city', (req, res) => {
     }
 });
 
+app.get('/developmentCity', (req, res) => {
+    let count = 0;
+    for (let i = 0; i < 5; i++) {
+        
+    }
+})
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
