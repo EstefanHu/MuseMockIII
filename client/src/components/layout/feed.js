@@ -7,7 +7,7 @@ class Feed extends Component {
         return (
             <>
                 {this.props.posts.map(item => (
-                    <Post post={item} />
+                    <Post post={item} key={item.id} />
                 ))}
             </>
         )
