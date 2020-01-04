@@ -220,13 +220,81 @@ const Mutation = new GraphQLObjectType({
     name: 'Mutation',
     
     fields: {
+        addCity: {
+            type: CityType,
+            args: {
+                name: {type: new GraphQLNonNull(GraphQLString)},
+                sectors: {type: GraphQLString},
+                posts: {type: GraphQLString}
+            },
+            resolve(parent, args) {
+                let city = new City({
+                    name: args.name,
+                    sectors: args.sector,
+                    posts: args.posts
+                });
+                return city.save();
+            }
+        },
+        addSector: {
+            type: SectorType,
+            args: {
+                name: {type: new GraphQLNonNull(GraphQLString)},
+                neighborhoods: {type: GraphQLString},
+                hubs: {type: GraphQLString},
+                posts: {type: GraphQLString}
+            },
+            resolve(parent, args) {
+                let sector = new Sector({
+                    name: args.name,
+                    neighborhoods: args.neighborhoods,
+                    hubs: args.hubs,
+                    posts: args.posts
+                });
+                return sector.save();
+            }
+        },
+        addNeighborhood: {
+            type: NeighborhoodType,
+            args: {
+                name: {type: new GraphQLNonNull(GraphQLString)},
+                hubs: {type: GraphQLString},
+                posts: {type: GraphQLString}
+            },
+            resolve(parent, args) {
+                let neighborhood = new Neighborhood({
+                    name: args.name,
+                    hubs: args.hubs,
+                    posts: args.posts
+                });
+                return neighborhood.save();
+            }
+        },
+        addHub: {
+            type: HubType,
+            args: {
+                name: {type: new GraphQLNonNull(GraphQLString)},
+                admins: {type: GraphQLString},
+                members: {type: GraphQLString},
+                posts: {type: GraphQLString}
+            },
+            resolve(parent, args) {
+                let hub = new Hub({
+                    name: args.name,
+                    admins: args.admins,
+                    members: args.members,
+                    posts: args.posts
+                });
+                hub.save();
+            }
+        },
         addUser: {
             type: UserType,
             args: {
                 firstName: {type: new GraphQLNonNull(GraphQLString)},
                 lastName: {type: new GraphQLNonNull(GraphQLString)},
                 email: {type: new GraphQLNonNull(GraphQLString)},
-                password: {type: new GraphQLNonNull(GraphQLString)},
+                password: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
                 let user = new User({
