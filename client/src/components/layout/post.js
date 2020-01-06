@@ -3,9 +3,13 @@ import React from 'react';
 function Post(props) {
     return (
         <article>
-            <p>{props.post.genre} by {props.post.author}</p>
-            <p>{props.post.credibility}</p>
-            <h3>{props.post.title}</h3>
+            <span>
+                <p>
+                    <a href="javascript:filterGenre()">{props.post.genre}</a> by {props.post.author}
+                </p>
+                <p>Cred: {props.post.credibility}</p>
+            </span>
+            <h2>{props.post.title}</h2>
             <p>{props.post.description}</p>
         </article>
     )
