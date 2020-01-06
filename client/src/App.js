@@ -16,6 +16,7 @@ import Feed from './components/home/home'; // likely will change
 import Profile from './components/profile/profile';
 import Create from './components/create/create';
 import Settings from './components/settings/settings';
+import Publication from './components/publication/publication';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,9 @@ class App extends Component {
             </PrivateRoute>
             <PrivateRoute path='/settings' exact>
               <Settings />
+            </PrivateRoute>
+            <PrivateRoute path='/publication'>
+              <Publication />
             </PrivateRoute>
           </Switch>
         </main>
