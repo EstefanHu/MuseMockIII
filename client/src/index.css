@@ -50,17 +50,45 @@ main {
 article {
   border-radius: .5rem;
   width: 600px;
-  margin: 0px auto 30px auto;
+  margin: 0px auto 35px auto;
   padding: 20px 25px;
   box-shadow: -12px -12px 12px 0  rgba(255, 255, 255, 1),
-              12px 12px 12px 0  rgba(0, 0, 0, 0.05)
+              12px 12px 12px 0  rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: rgb(61, 61, 61);
 }
 
-article h2 {
+.genre {
+  color: grey;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.genre:hover {
+  color: rgb(173, 173, 173);
+  text-decoration: underline;
+}
+
+h2 {
   font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+h2 a {
+  color: rgb(61, 61, 61);
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: grey;
 }
 
 article span {
   display: flex;
   justify-content: space-between;
+}
+
+.description {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
