@@ -47,6 +47,12 @@ main {
   width: 1000px;
 }
 
+.left {
+  border-radius: 5px;
+  width: 200px;
+  padding: 20px;
+}
+
 article {
   border-radius: 5px;
   width: 600px;

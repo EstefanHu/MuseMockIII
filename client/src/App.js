@@ -37,21 +37,21 @@ class App extends Component {
               <Route path='/dashboard' exact>
                 <Dashboard />
               </Route>
-              <PrivateRoute path='/' exact>
+              <Route path='/' exact>
                 <Feed />
-              </PrivateRoute>
-              <PrivateRoute path='/profile' exact>
+              </Route>
+              <Route path='/profile' exact>
                 <Profile />
-              </PrivateRoute>
-              <PrivateRoute path='/create' exact>
+              </Route>
+              <Route path='/create' exact>
                 <Create />
-              </PrivateRoute>
-              <PrivateRoute path='/settings' exact>
+              </Route>
+              <Route path='/settings' exact>
                 <Settings />
-              </PrivateRoute>
-              <PrivateRoute path='/read'>
+              </Route>
+              <Route path='/read'>
                 <Read />
-              </PrivateRoute>
+              </Route>
             </Switch>
           </UserContext>
         </main>
