@@ -13,16 +13,6 @@ class Home extends Component {
         }
     }
 
-    processPosts(response) {
-        let responsePosts = [];
-        for (let i = 0; i < response.length; i++) {
-            responsePosts.push(response[i]);
-        }
-        this.state({
-            feedPosts: responsePosts
-        });
-    }
-
     componentDidMount() {
         fetch('http://localhost:4000/home')
             .then(res => res.json())
