@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #EEEEEE;
+  background-color: rgb(245, 245, 245);
 }
 
 nav {
@@ -48,14 +48,14 @@ main {
 }
 
 article {
-  border-radius: .5rem;
+  border-radius: 5px;
   width: 600px;
   margin: 0px auto 35px auto;
   padding: 20px 25px;
-  box-shadow: -12px -12px 12px 0  rgba(255, 255, 255, 1),
-              12px 12px 12px 0  rgba(0, 0, 0, 0.05);
+  box-shadow: 12px 12px 12px 0  rgba(0, 0, 0, 0.05);
   font-size: 1rem;
   color: rgb(61, 61, 61);
+  background-color: rgb(255, 255, 255);
 }
 
 .genre {

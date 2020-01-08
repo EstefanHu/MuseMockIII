@@ -17,6 +17,7 @@ import Profile from './components/profile/profile';
 import Create from './components/create/create';
 import Settings from './components/settings/settings';
 import Publication from './components/publication/publication';
+import Read from './components/publication/read';
 
 class App extends Component {
   constructor(props) {
@@ -49,8 +50,8 @@ class App extends Component {
             <PrivateRoute path='/settings' exact>
               <Settings />
             </PrivateRoute>
-            <PrivateRoute path='/publication'>
-              <Publication />
+            <PrivateRoute path='/read'>
+              <Read />
             </PrivateRoute>
           </Switch>
         </main>
