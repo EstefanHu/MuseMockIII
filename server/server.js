@@ -75,9 +75,9 @@ app.get('/home', (req, res) => {
                 "credibility": 49343
             },
             "sectors": [
-                {
-                    "name": "University"
-                }
+                "University District",
+                "Fremont",
+                "Capital Hill"
             ]
         });
     } catch(err) {
