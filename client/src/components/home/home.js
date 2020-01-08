@@ -9,7 +9,8 @@ class Home extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            feedPosts: []
+            feedPosts: [],
+            sectors: []
         }
     }
 
@@ -20,7 +21,8 @@ class Home extends Component {
                 res => {
                     this.setState({
                         isLoaded: true,
-                        feedPosts: res.posts
+                        feedPosts: res.posts,
+                        sectors: res.sectors
                     });
                 },
                 error => {
@@ -33,7 +35,7 @@ class Home extends Component {
     }
 
     render() {
-        const { error, isLoaded, feedPosts } = this.state;
+        const { error, isLoaded, sectors } = this.state;
         if (error) {
             return <>Error: {error.message}</>;
         } else if (!isLoaded) {
@@ -41,7 +43,7 @@ class Home extends Component {
         } else {
             return (
                 <>
-                    <Navigation sectors={feedPosts} />
+                    <Navigation sectors={sectors} />
                     <section>
                         <h1>Hello Feed</h1>
                     </section>

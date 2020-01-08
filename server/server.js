@@ -73,7 +73,12 @@ app.get('/home', (req, res) => {
                 "firstName": "Estefan",
                 "lastName": "Hu",
                 "credibility": 49343
-            }
+            },
+            "sectors": [
+                {
+                    "name": "University"
+                }
+            ]
         });
     } catch(err) {
         res.type('text').status(500).send('Error: ' + err);
