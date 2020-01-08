@@ -14,16 +14,6 @@ class Dashboard extends Component {
         }
     }
 
-    processPosts(response) {
-        let responsePosts = [];
-        for (let i = 0; i < response.length; i++) {
-            responsePosts.push(response[i]);
-        }
-        this.setState({
-            headerPosts: responsePosts
-        });
-    }
-
     componentDidMount() {
         fetch('http://localhost:4000/headerStories')
         .then(res => res.json())
