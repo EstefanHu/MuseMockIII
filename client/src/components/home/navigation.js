@@ -1,11 +1,13 @@
 import React from 'react';
 
-export function Navigation(props) {
+const Navigation = props => {
   return (
-    <section id="navigation" className="left">
-      {this.props.sectors.map(sector => (
-        <span>sector.name</span>
+    <section className="left">
+      {props.sectors.map(sector => (
+        <span>{sector.name}</span>
       ))}
     </section>
   );
 }
+
+export default Navigation;

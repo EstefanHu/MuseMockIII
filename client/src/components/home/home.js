@@ -1,13 +1,64 @@
 import React, { Component } from 'react';
 
-class Feed extends Component {
+import Navigation from './navigation';
+
+class Home extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            error: null,
+            isLoaded: false,
+            feedPosts: []
+        }
+    }
+
+    processPosts(response) {
+        let responsePosts = [];
+        for (let i = 0; i < response.length; i++) {
+            responsePosts.push(response[i]);
+        }
+        this.state({
+            feedPosts: responsePosts
+        });
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:4000/home')
+            .then(res => res.json())
+            .then(
+                res => {
+                    this.setState({
+                        isLoaded: true,
+                        feedPosts: res.posts
+                    });
+                },
+                error => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
     render() {
-        return (
-            <section>
-                <h1>Hello Feed</h1>
-            </section>
-        );
+        const { error, isLoaded, feedPosts } = this.state;
+        if (error) {
+            return <>Error: {error.message}</>;
+        } else if (!isLoaded) {
+            return <>Loading...</>;
+        } else {
+            return (
+                <>
+                    <Navigation sectors={feedPosts} />
+                    <section>
+                        <h1>Hello Feed</h1>
+                    </section>
+                </>
+            );
+        }
     }
 }
 
-export default Feed;
+export default Home;
