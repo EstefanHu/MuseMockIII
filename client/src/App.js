@@ -3,10 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
-  useHistory,
-  useLocation
+  useHistory
   } from 'react-router-dom';
 import './App.css';
 
@@ -16,8 +14,8 @@ import Feed from './components/home/home'; // likely will change
 import Profile from './components/profile/profile';
 import Create from './components/create/create';
 import Settings from './components/settings/settings';
-import Publication from './components/publication/publication';
 import Read from './components/publication/read';
+import UserContext from './contexts/userContext';
 
 class App extends Component {
   constructor(props) {
@@ -34,26 +32,28 @@ class App extends Component {
       <Router>
         <Navbar isLoggedIn={this.state.isLoggedIn} />
         <main>
-          <Switch>
-            <Route path='/dashboard' exact>
-              <Dashboard />
-            </Route>
-            <PrivateRoute path='/' exact>
-              <Feed />
-            </PrivateRoute>
-            <PrivateRoute path='/profile' exact>
-              <Profile />
-            </PrivateRoute>
-            <PrivateRoute path='/create' exact>
-              <Create />
-            </PrivateRoute>
-            <PrivateRoute path='/settings' exact>
-              <Settings />
-            </PrivateRoute>
-            <PrivateRoute path='/read'>
-              <Read />
-            </PrivateRoute>
-          </Switch>
+          <UserContext>
+            <Switch>
+              <Route path='/dashboard' exact>
+                <Dashboard />
+              </Route>
+              <PrivateRoute path='/' exact>
+                <Feed />
+              </PrivateRoute>
+              <PrivateRoute path='/profile' exact>
+                <Profile />
+              </PrivateRoute>
+              <PrivateRoute path='/create' exact>
+                <Create />
+              </PrivateRoute>
+              <PrivateRoute path='/settings' exact>
+                <Settings />
+              </PrivateRoute>
+              <PrivateRoute path='/read'>
+                <Read />
+              </PrivateRoute>
+            </Switch>
+          </UserContext>
         </main>
       </Router>
     )
