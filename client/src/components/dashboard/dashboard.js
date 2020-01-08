@@ -19,16 +19,16 @@ class Dashboard extends Component {
         .then(res => res.json())
         .then(
             res => {
-            this.setState({
-                isLoaded: true,
-                headerPosts: res.posts
-            });
+                this.setState({
+                    isLoaded: true,
+                    headerPosts: res.posts
+                });
             },
             error => {
-            this.setState({
-                isLoaded: true,
-                error
-            });
+                this.setState({
+                    isLoaded: true,
+                    error
+                });
             }
         )
     }
