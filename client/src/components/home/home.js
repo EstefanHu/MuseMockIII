@@ -12,7 +12,8 @@ class Home extends Component {
             error: null,
             isLoaded: false,
             feedPosts: [],
-            sectors: []
+            sectors: [],
+            notifications: []
         }
     }
 
