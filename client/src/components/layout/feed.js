@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Post from './post';
 
-class Feed extends Component {
-    render() {
-        return (
-            <section>
-                {this.props.posts.map(item => (
-                    <Post post={item} key={item.id} />
-                ))}
-            </section>
-        )
-    }
+const Feed = props => {
+    return (
+        <>
+            {props.posts.map(item => (
+                <Post post={item} key={item.id} />
+            ))}
+        </>
+    )
 }
 
 export default Feed;

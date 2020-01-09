@@ -2,7 +2,7 @@ import React from 'react';
 
 function Notification(props) {
   return (
-    <div>Hello these are notifications</div>
+    <aside>Hello these are notifications</aside>
   )
 }
 

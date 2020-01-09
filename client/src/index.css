@@ -45,12 +45,18 @@ nav a:hover {
 main {
   margin: 60px auto;
   width: 1000px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .left {
   border-radius: 5px;
   width: 200px;
   padding: 20px;
+}
+
+.left span {
+  display: block;
 }
 
 article {
@@ -97,4 +103,8 @@ article span {
 .description {
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+aside {
+  width: 200px;
 }
