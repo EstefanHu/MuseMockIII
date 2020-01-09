@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Notification = () => {
+const Notification = props => {
   return (
-    <aside>Hello these are notifications</aside>
+    <aside>
+      {props.map(item => (
+        <span>{item.content}</span>
+      ))}
+    </aside>
   )
 }
 
