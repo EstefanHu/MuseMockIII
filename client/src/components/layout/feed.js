@@ -1,12 +1,19 @@
 import React from 'react';
 
-import Post from './post';
-
 const Feed = props => {
     return (
         <>
             {props.posts.map(item => (
-                <Post post={item} key={item.id} />
+                <article>
+                    <span>
+                        <p>
+                            <a href="javascript:filterGenre()" className="genre">{item.genre}</a> by {item.author}
+                        </p>
+                        <p>Cred: {item.credibility}</p>
+                    </span>
+                    <h2><a href="/post/{item.id}">{item.title}</a></h2>
+                    <p className="description">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.description}</p>
+                </article>
             ))}
         </>
     )
