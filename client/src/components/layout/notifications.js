@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Notification(props) {
+const Notification = () => {
   return (
     <aside>Hello these are notifications</aside>
   )

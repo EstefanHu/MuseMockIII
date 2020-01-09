@@ -2,7 +2,7 @@ import React from 'react';
 
 const Feed = props => {
     return (
-        <section>
+        <section id="feed">
             {props.posts.map(item => (
                 <article>
                     <span>
