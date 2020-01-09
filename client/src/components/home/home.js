@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Navigation from './navigation';
+import Feed from '../layout/feed';
+import Notifications from '../layout/notifications';
 
 class Home extends Component {
     constructor(props) {
@@ -44,9 +46,8 @@ class Home extends Component {
             return (
                 <>
                     <Navigation sectors={sectors} />
-                    <section>
-                        <h1>Hello Feed</h1>
-                    </section>
+                    <Feed posts={this.state.feedPosts} />
+                    <Notifications />
                 </>
             );
         }

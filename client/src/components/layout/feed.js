@@ -2,7 +2,7 @@ import React from 'react';
 
 const Feed = props => {
     return (
-        <>
+        <section>
             {props.posts.map(item => (
                 <article>
                     <span>
@@ -15,7 +15,7 @@ const Feed = props => {
                     <p className="description">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.description}</p>
                 </article>
             ))}
-        </>
+        </section>
     )
 }
 
