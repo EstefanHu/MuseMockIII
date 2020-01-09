@@ -24,7 +24,8 @@ class Home extends Component {
                     this.setState({
                         isLoaded: true,
                         feedPosts: res.posts,
-                        sectors: res.sectors
+                        sectors: res.sectors,
+                        notifications: res.notifications
                     });
                 },
                 error => {
@@ -37,7 +38,7 @@ class Home extends Component {
     }
 
     render() {
-        const { error, isLoaded, sectors } = this.state;
+        const { error, isLoaded, sectors, feedPosts, notifications } = this.state;
         if (error) {
             return <>Error: {error.message}</>;
         } else if (!isLoaded) {
@@ -46,8 +47,8 @@ class Home extends Component {
             return (
                 <>
                     <Navigation sectors={sectors} />
-                    <Feed posts={this.state.feedPosts} />
-                    <Notifications />
+                    <Feed posts={feedPosts} />
+                    <Notifications content={notifications} />
                 </>
             );
         }
