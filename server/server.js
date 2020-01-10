@@ -25,8 +25,11 @@ mongoose.connection.once('open', () => {
 });
 
 const dashboardRouter = require('./routes/dashboard');
-
+const homeRouter = require('./routes/home');
+const createRouter = require('./routes/create');
 app.use('/dashboard', dashboardRouter);
+app.use('./home', homeRouter);
+app.use('./create', createRouter);
 
 // Might want to break routes into deligated router foulders useing router from require('express').Router()
 
