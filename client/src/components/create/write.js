@@ -55,7 +55,7 @@ class Write extends Component {
                 <form onSubmit={this.onSubmit} style={createForm}>
                     <input placeholder="Title" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
                     <input placeholder="Description" type="text" value={description} onChange={this.onChangeDescription} style={input} required />
-                    <textarea placeholder="Write here..." value={content} onChange={this.onChangeContent} style={textarea} required />
+                    <textarea placeholder="Write here..." value={content} onChange={this.onChangeContent} style={textarea} rows="5" required />
                     <input type="submit" value="Publish!" style={submit} />
                 </form>
             </section>
@@ -74,7 +74,7 @@ const input = {
     border: '1px solid lightgrey',
     borderRadius: '15px',
     padding: '5px 15px',
-    fontSize: '1rem',
+    fontSize: '1.1rem',
     marginBottom: '10px'
 }
 
@@ -82,8 +82,8 @@ const textarea = {
     maxWidth: '600px',
     border: '1px solid lightgrey',
     borderRadius: '15px',
-    padding: '5px 15px',
-    fontSize: '1rem',
+    padding: '10px 15px',
+    fontSize: '1.1rem',
     marginBottom: '10px'
 }
 
