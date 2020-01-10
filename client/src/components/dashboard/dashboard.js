@@ -15,7 +15,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/headerStories')
+        fetch('http://localhost:4000/dashboard')
         .then(res => res.json())
         .then(
             res => {
