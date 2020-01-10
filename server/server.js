@@ -24,6 +24,10 @@ mongoose.connection.once('open', () => {
     console.log('Connection Error: ' + err);
 });
 
+const dashboardRouter = require('./routes/dashboard');
+
+app.use('/dashboard', dashboardRouter);
+
 // Might want to break routes into deligated router foulders useing router from require('express').Router()
 
 app.get('/headerStories', (req,res) => {
