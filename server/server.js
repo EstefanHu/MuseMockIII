@@ -27,11 +27,10 @@ mongoose.connection.once('open', () => {
 const dashboardRouter = require('./routes/dashboard');
 const homeRouter = require('./routes/home');
 const createRouter = require('./routes/create');
-app.use('/dashboard', dashboardRouter);
-app.use('./home', homeRouter);
-app.use('./create', createRouter);
 
-// Might want to break routes into deligated router foulders useing router from require('express').Router()
+app.use('/dashboard', dashboardRouter);
+app.use('/home', homeRouter);
+app.use('/create', createRouter);
 
 app.get('/headerStories', (req,res) => {
     try {
@@ -59,47 +58,6 @@ app.get('/headerStories', (req,res) => {
         res.type('text').status(500).send('Error: ' + err);
     }
 });
-
-app.get('/home', (req, res) => {
-    try {
-        res.json({
-            "posts": [
-                {
-                    "id": "1",
-                    "title": "Hello World",
-                    "description": "whats up this is an example post",
-                    "genre": "Poem",
-                    "author": "Estefan",
-                    "credibility": 4927550
-                },
-                {
-                    "id": "2",
-                    "title": "A brave new world",
-                    "description": "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.",
-                    "genre": "Short Story",
-                    "author": "Justin",
-                    "credibility": 8763
-                }
-            ],
-            "user": {
-                "firstName": "Estefan",
-                "lastName": "Hu",
-                "credibility": 49343
-            },
-            "sectors": [
-                "University District",
-                "Fremont",
-                "Capital Hill"
-            ],
-            "notifications": [
-                "Sami liked your post",
-                "Your post got 10k likes"
-            ]
-        });
-    } catch(err) {
-        res.type('text').status(500).send('Error: ' + err);
-    }
-})
 
 app.get('/city', (req, res) => {
     try {

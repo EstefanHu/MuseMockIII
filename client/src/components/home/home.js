@@ -18,7 +18,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/home')
+        fetch('http://localhost:4000/home/')
             .then(res => res.json())
             .then(
                 res => {
