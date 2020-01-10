@@ -48,18 +48,51 @@ class Write extends Component {
     }
 
     render() {
+        const { title, description, content } = this.state;
         return (
             <section>
                 <h2>Compose Work</h2>
-                <form onSubmit={this.onSubmit}>
-                    <input placeholder="Title" type="text" value={this.state.title} onChange={this.onChangeTitle} required />
-                    <input placeholder="Description" type="text" value={this.state.description} onChange={this.onChangeDescription} required />
-                    <textarea placeholder="Write here..." value={this.state.content} onChange={this.onChangeContent} required />
-                    <input type="submit" value="Publish!" />
+                <form onSubmit={this.onSubmit} style={createForm}>
+                    <input placeholder="Title" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
+                    <input placeholder="Description" type="text" value={description} onChange={this.onChangeDescription} style={input} required />
+                    <textarea placeholder="Write here..." value={content} onChange={this.onChangeContent} style={textarea} required />
+                    <input type="submit" value="Publish!" style={submit} />
                 </form>
             </section>
         )
     }
 }
 
+const createForm = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '600px',
+}
+
+const input = {
+    height: '40px',
+    border: '1px solid lightgrey',
+    borderRadius: '15px',
+    padding: '5px 15px',
+    fontSize: '1rem',
+    marginBottom: '10px'
+}
+
+const textarea = {
+    maxWidth: '600px',
+    border: '1px solid lightgrey',
+    borderRadius: '15px',
+    padding: '5px 15px',
+    fontSize: '1rem',
+    marginBottom: '10px'
+}
+
+const submit = {
+    height: '40px',
+    backgroundColor: 'blue',
+    border: 'none',
+    borderRadius: '15px',
+    fontSize: '1rem',
+    color: 'white',
+}
 export default Write;
