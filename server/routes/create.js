@@ -4,9 +4,10 @@ router.route('/').get((req, res) => {
   res.json({"hello": "World"});
 });
 
-router.route('/createPublication').get((req, res) => {
+router.route('/createPublication').post((req, res) => {
   try {
-    res.json({"Hello": "fromCreatePublicaiton"});
+    let data = req.body.title;
+    console.log(data);
   } catch(err) {
     res.type('text').status(500).send('Error: ' + err);
   }

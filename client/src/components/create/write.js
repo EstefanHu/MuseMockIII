@@ -33,18 +33,20 @@ class Write extends Component {
         });
     }
 
-    onSubmit(e) {
+    onSubmit = e => {
         e.preventDefault();
 
-        const post = {
-            title: this.state.title,
-            description: this.state.description,
-            content: this.state.content
-        }
+        let url = "http://localhost:4000/create/createPublication";
+        let params = new FormData();
+        params.append('title', this.state.title);
+        params.append('description', this.state.description);
+        params.append('content', this.state.content);
+        fetch(url, {method: "POST", body: params})
+            .then(res => res.json())
+            .catch(console.error);
 
-        console.log(post);
 
-        window.location = '/profile';
+        // window.location = '/profile';
     }
 
     render() {
