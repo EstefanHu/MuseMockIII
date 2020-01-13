@@ -51,10 +51,8 @@ class Write extends Component {
                 })
             })
             .then(res => res.json())
-            // .then(window.location = '/profile')
             .catch(console.error);
         this.props.history.push('/profile');
-        // window.location = '/profile';
     }
 
     render() {
