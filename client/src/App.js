@@ -5,8 +5,10 @@ import {
   Route,
   Redirect,
   useHistory
-  } from 'react-router-dom';
+} from 'react-router-dom';
 import './App.css';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 
 import Navbar from './components/layout/navbar';
 import Dashboard from './components/dashboard/dashboard';
@@ -17,6 +19,10 @@ import Settings from './components/settings/settings';
 import Read from './components/publication/read';
 import UserContext from './contexts/userContext';
 import Notifications from './components/layout/notifications';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql'
+});
 
 class App extends Component {
   constructor(props) {
@@ -44,9 +50,11 @@ class App extends Component {
               <Route path='/profile' exact>
                 <Profile />
               </Route>
-              <Route path='/create' exact>
-                <Create />
-              </Route>
+              <ApolloProvider client={client}>
+                <Route path='/create' exact>
+                  <Create />
+                </Route>
+              </ApolloProvider>
               <Route path='/settings' exact>
                 <Settings />
               </Route>
