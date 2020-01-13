@@ -11,4 +11,14 @@ const getUserQuery = gql`
   }
 `;
 
-export { getUserQuery };
+const createUserQuery = gql`
+  mutation($firstName: String!, $lastName: String!, $email: String, $password: password) {
+    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+      id
+      firstName
+      lastName
+    }
+  }
+`;
+
+export { getUserQuery, createUserQuery };
