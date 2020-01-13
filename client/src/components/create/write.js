@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { withRouter } from 'react-router-dom';
+
 class Write extends Component {
     constructor(props) {
         super(props);
@@ -34,6 +36,7 @@ class Write extends Component {
     }
 
     onSubmit = e => {
+        e.preventDefault();
 
         let url = "http://localhost:4000/create/createPublication";
         fetch(url, {method: "POST",
@@ -48,9 +51,9 @@ class Write extends Component {
                 })
             })
             .then(res => res.json())
+            // .then(window.location = '/profile')
             .catch(console.error);
-
-        e.preventDefault();
+        this.props.history.push('/profile');
         // window.location = '/profile';
     }
 
@@ -102,4 +105,4 @@ const submit = {
     fontSize: '1rem',
     color: 'white',
 }
-export default Write;
+export default withRouter(Write);
