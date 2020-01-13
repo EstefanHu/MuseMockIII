@@ -1,15 +1,15 @@
 import { gql } from 'apollo-boost';
 
 const getPublicationsQuery = gql`
-	{
-		Publications {
+    {
+        Publications {
             id
-			title
+            title
             genre
             description
             credibility
-		}
-	}
+        }
+    }
 `;
 
 const getPublicationQuery = gql`
@@ -29,4 +29,13 @@ const getPublicationQuery = gql`
     }
 `;
 
-export { getPublicationsQuery, getPublicationQuery };
+const createPublicationQuery = gql`
+    mutation($title: String!, $genre: String!, $description: String!, $content: String!, $authorId: ID!) {
+        addPublication(title: $title, genre: $genre, description: $description, content: $content, authorId: $authorId) {
+            id
+            title
+        }
+    }
+`;
+
+export { getPublicationsQuery, getPublicationQuery, createPublicationQuery };
