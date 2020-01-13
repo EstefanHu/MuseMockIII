@@ -12,6 +12,7 @@ require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(cors());
+// remove soon
 app.use('/graphql', graphqlHTTP({
     schema,
     graphiql: true

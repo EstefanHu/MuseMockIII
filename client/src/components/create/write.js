@@ -29,23 +29,28 @@ class Write extends Component {
 
     onChangeContent(e) {
         this.setState({
-            content: e.target.content
+            content: e.target.value
         });
     }
 
     onSubmit = e => {
-        e.preventDefault();
 
         let url = "http://localhost:4000/create/createPublication";
-        let params = new FormData();
-        params.append('title', this.state.title);
-        params.append('description', this.state.description);
-        params.append('content', this.state.content);
-        fetch(url, {method: "POST", body: params})
+        fetch(url, {method: "POST",
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: this.state.title,
+                    description: this.state.description,
+                    content: this.state.content
+                })
+            })
             .then(res => res.json())
             .catch(console.error);
 
-
+        e.preventDefault();
         // window.location = '/profile';
     }
 

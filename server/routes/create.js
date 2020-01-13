@@ -6,7 +6,7 @@ router.route('/').get((req, res) => {
 
 router.route('/createPublication').post((req, res) => {
   try {
-    let data = req.body.title;
+    let data = req.body;
     console.log(data);
   } catch(err) {
     res.type('text').status(500).send('Error: ' + err);
