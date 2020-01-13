@@ -47,7 +47,8 @@ class Write extends Component {
                 body: JSON.stringify({
                     title: this.state.title,
                     description: this.state.description,
-                    content: this.state.content
+                    content: this.state.content,
+                    userId: 1
                 })
             })
             .then(res => res.json())

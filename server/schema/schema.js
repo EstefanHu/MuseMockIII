@@ -321,6 +321,7 @@ const Mutation = new GraphQLObjectType({
                     content: args.content,
                     userId: args.userId
                 });
+                return post.save();
             }
         }
     }
