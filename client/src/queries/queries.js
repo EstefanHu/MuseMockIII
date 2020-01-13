@@ -9,4 +9,4 @@ const addBookMutation = gql`
     }
 `;
 
-export {addBookMutation, getBookQuery};
+export {addBookMutation};
