@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost';
 
-const getSummaryPostsQuery = gql`
+const getPostsQuery = gql`
 	{
 		Posts {
             id
@@ -12,16 +12,21 @@ const getSummaryPostsQuery = gql`
 	}
 `;
 
-const getPostsQuery = gql`
-    {
-        Posts {
+const getPostQuery = gql`
+    query($id: ID) {
+        Post(id: $id) {
             id
             title
             genre
             content
             credibility
+            user {
+                id
+                firstName
+                lastName
+            }
         }
     }
 `;
 
-export { getSummaryPostsQuery, getPostsQuery };
+export { getPostsQuery, getPostQuery };
