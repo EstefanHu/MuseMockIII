@@ -5,13 +5,18 @@ import Name from './name';
 import Link from './link';
 
 const Info = props => {
+  const { firstName, lastName, links } = props.user;
   return (
-    <section className="left" style={primary} >
+    <section className="left" style={info} >
       <ProfileImage />
-      <Name />
-      <Link />
+      <Name name={ firstName + " " + lastName } />
+      <Link links={ links } />
     </section>
   )
+}
+
+const info = {
+  backgroundColor: 'white'
 }
 
 export default Info;

@@ -2,7 +2,11 @@ import React from 'react';
 
 const Link = props => {
   return (
-    <span></span>
+    <>
+      {props.links.map(link => (
+        <span><a href={ link }>{ link }</a></span>
+      ))}
+    </>
   )
 }
 
