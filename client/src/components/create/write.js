@@ -81,20 +81,20 @@ class Write extends Component {
             <section>
                 <h2>Compose Work</h2>
                 <form onSubmit={this.onSubmit} style={createForm}>
-                    <input placeholder="Title" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
+                    <input placeholder="Title your masterpiece" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
                     <span style={selectHolder} >
                         <select value={genre} onChange={this.onChangeGenre} style={select} required >
-                            <option style={option} default>Pick a Genre</option>
+                            <option style={option} default>Genre</option>
                             <option style={option} value="short_story">Short Story</option>
                             <option style={option} value="poem">Poem</option>
                             <option style={option} value="life">Life</option>
                         </select>
                         <select value={location} onChange={this.onChangeLocation} style={select} required >
-                            
+                            <option sytle={option} default>Location</option>
                         </select>
                     </span>
-                    <input placeholder="Description" type="text" value={description} onChange={this.onChangeDescription} style={input} required />
-                    <textarea placeholder="Write here..." value={content} onChange={this.onChangeContent} style={textarea} rows="5" required />
+                    <input placeholder="Write a short description" type="text" value={description} onChange={this.onChangeDescription} style={input} required />
+                    <textarea placeholder="Start your publication" value={content} onChange={this.onChangeContent} style={textarea} rows="15" required />
                     <input type="submit" value="Publish!" style={submit} />
                 </form>
             </section>
@@ -114,7 +114,7 @@ const input = {
     borderRadius: '5px',
     padding: '5px 15px',
     fontSize: '1.1rem',
-    marginBottom: '10px'
+    marginBottom: '15px'
 }
 
 const textarea = {
@@ -123,33 +123,33 @@ const textarea = {
     borderRadius: '5px',
     padding: '10px 15px',
     fontSize: '1.1rem',
-    marginBottom: '10px'
+    marginBottom: '15px'
 }
 
 const submit = {
     height: '40px',
     backgroundColor: 'blue',
     border: 'none',
-    borderRadius: '15px',
+    borderRadius: '5px',
     fontSize: '1rem',
     color: 'white'
 }
 
 const select = {
     height: '40px',
-    width: '48%',
+    width: '49%',
     fontSize: '1.1rem',
     padding: '10px 15px',
     border: '1px solid lightgrey',
     backgroundColor: 'white',
-    color: 'lightgrey'
+    color: 'grey'
 }
 
 const selectHolder = {
     display: 'flex',
     justifyContent: 'space-between',
     height: '40px',
-    marginBottom: '10px'
+    marginBottom: '15px'
 }
 
 const option = {
