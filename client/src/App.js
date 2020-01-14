@@ -7,8 +7,6 @@ import {
   useHistory
 } from 'react-router-dom';
 import './App.css';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
 
 import Navbar from './components/layout/navbar';
 import Dashboard from './components/dashboard/dashboard';
@@ -19,10 +17,6 @@ import Settings from './components/settings/settings';
 import Read from './components/publication/read';
 import UserContext from './contexts/userContext';
 import Notifications from './components/layout/notifications';
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
-});
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +34,7 @@ class App extends Component {
         <Navbar isLoggedIn={this.state.isLoggedIn} />
         <main>
           <UserContext>
+
             <Switch>
               <Route path='/dashboard' exact>
                 <Dashboard />
@@ -50,11 +45,9 @@ class App extends Component {
               <Route path='/profile' exact>
                 <Profile />
               </Route>
-              <ApolloProvider client={client}>
-                <Route path='/create' exact>
-                  <Create />
-                </Route>
-              </ApolloProvider>
+              <Route path='/create' exact>
+                <Create />
+              </Route>
               <Route path='/settings' exact>
                 <Settings />
               </Route>
@@ -62,6 +55,7 @@ class App extends Component {
                 <Read />
               </Route>
             </Switch>
+
           </UserContext>
         </main>
       </Router>
@@ -69,70 +63,70 @@ class App extends Component {
   }
 }
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    fakeAuth.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
-  },
-  signout(cb) {
-    fakeAuth.isAuthenticated = false;
-    setTimeout(cb, 100);
-  }
-};
+// const fakeAuth = {
+//   isAuthenticated: false,
+//   authenticate(cb) {
+//     fakeAuth.isAuthenticated = true;
+//     setTimeout(cb, 100); // fake async
+//   },
+//   signout(cb) {
+//     fakeAuth.isAuthenticated = false;
+//     setTimeout(cb, 100);
+//   }
+// };
 
-function AuthButton() {
-  let history = useHistory();
+// function AuthButton() {
+//   let history = useHistory();
 
-  return fakeAuth.isAuthenticated ? (
-    <p>
-      Welcome!{" "}
-      <button
-        onClick={() => {
-          fakeAuth.signout(() => history.push("/"));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
-  ) : (
-    <p>You are not logged in.</p>
-  );
-}
+//   return fakeAuth.isAuthenticated ? (
+//     <p>
+//       Welcome!{" "}
+//       <button
+//         onClick={() => {
+//           fakeAuth.signout(() => history.push("/"));
+//         }}
+//       >
+//         Sign out
+//       </button>
+//     </p>
+//   ) : (
+//     <p>You are not logged in.</p>
+//   );
+// }
 
-// A wrapper for <Route> that redirects to the login
-// screen if you're not yet authenticated.
-function PrivateRoute({ children, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-      fakeAuth.isAuthenticated ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/dashboard",
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  );
-}
+// // A wrapper for <Route> that redirects to the login
+// // screen if you're not yet authenticated.
+// function PrivateRoute({ children, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={({ location }) =>
+//       fakeAuth.isAuthenticated ? (
+//           children
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/dashboard",
+//               state: { from: location }
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
 
-const Public = () => <h3>Public</h3>
-const Protected = () => <h3>Protected</h3>
+// const Public = () => <h3>Public</h3>
+// const Protected = () => <h3>Protected</h3>
 
-class Login extends Component {
-  render() {
-    return (
-      <div>
-        LOGIN
-      </div>
-    )
-  }
-}
+// class Login extends Component {
+//   render() {
+//     return (
+//       <div>
+//         LOGIN
+//       </div>
+//     )
+//   }
+// }
 
 export default App;

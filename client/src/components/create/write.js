@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import { flowRight as compose } from 'lodash'; // Want to remove
 import { withRouter } from 'react-router-dom';
 
-import { createPublicationMutation } from '../../queries/post_queries';
 
 class Write extends Component {
     constructor(props) {
@@ -42,31 +39,21 @@ class Write extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        // let url = "http://localhost:4000/create/createPublication";
-        // fetch(url, {method: "POST",
-        //         headers: {
-        //             Accept: 'application/json',
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify({
-        //             title: this.state.title,
-        //             description: this.state.description,
-        //             content: this.state.content,
-        //             userId: 1
-        //         })
-        //     })
-        //     .then(res => res.json())
-        //     .catch(console.error);
-
-        this.props.createPublicationMutation({
-            variables: {
-                title: this.state.title,
-                genre: this.state.genre,
-                description: this.state.description,
-                content: this.state.content,
-                authorId: 1
-            }
-        });
+        let url = "http://localhost:4000/create/createPublication";
+        fetch(url, {method: "POST",
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: this.state.title,
+                    description: this.state.description,
+                    content: this.state.content,
+                    userId: 1
+                })
+            })
+            .then(res => res.json())
+            .catch(console.error);
 
         this.props.history.push('/profile');
     }
@@ -119,7 +106,5 @@ const submit = {
     fontSize: '1rem',
     color: 'white',
 }
-export default compose(
-    graphql(createPublicationMutation, { name: "createPublicationMutation" })
-)(Write);
+export default withRouter(Write);
 
