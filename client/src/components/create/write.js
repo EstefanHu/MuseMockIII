@@ -47,8 +47,10 @@ class Write extends Component {
                 },
                 body: JSON.stringify({
                     title: this.state.title,
+                    genre: this.state.genre,
                     description: this.state.description,
                     content: this.state.content,
+                    credibility: 0,
                     userId: 1
                 })
             })
@@ -106,5 +108,5 @@ const submit = {
     fontSize: '1rem',
     color: 'white',
 }
-export default withRouter(Write);
 
+export default withRouter(Write);
