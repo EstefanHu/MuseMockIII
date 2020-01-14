@@ -103,7 +103,8 @@ class Write extends Component {
 }
 
 const header = {
-    textAlign: 'center'
+    textAlign: 'center',
+    marginBottom: '15px'
 }
 
 const createForm = {
@@ -143,7 +144,6 @@ const select = {
     height: '40px',
     width: '49%',
     fontSize: '1.1rem',
-    padding: '10px 15px',
     border: '1px solid lightgrey',
     backgroundColor: 'white',
     color: 'grey'
@@ -158,7 +158,7 @@ const selectHolder = {
 
 const option = {
     backgroundColor: '#fff',
-    fontSize: '1.6rem'
+    fontSize: '1.6rem',
 }
 
 export default withRouter(Write);
