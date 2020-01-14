@@ -79,7 +79,7 @@ class Write extends Component {
         const { title, genre, location, description, content } = this.state;
         return (
             <section>
-                <h2>Compose Work</h2>
+                <h2 style={header} >Compose Work</h2>
                 <form onSubmit={this.onSubmit} style={createForm}>
                     <input placeholder="Title your masterpiece" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
                     <span style={selectHolder} >
@@ -93,13 +93,17 @@ class Write extends Component {
                             <option sytle={option} default>Location</option>
                         </select>
                     </span>
-                    <input placeholder="Write a short description" type="text" value={description} onChange={this.onChangeDescription} style={input} required />
+                    <textarea placeholder="Write a short description" value={description} onChange={this.onChangeDescription} style={textarea} rows="5" required />
                     <textarea placeholder="Start your publication" value={content} onChange={this.onChangeContent} style={textarea} rows="15" required />
                     <input type="submit" value="Publish!" style={submit} />
                 </form>
             </section>
         )
     }
+}
+
+const header = {
+    textAlign: 'center'
 }
 
 const createForm = {
