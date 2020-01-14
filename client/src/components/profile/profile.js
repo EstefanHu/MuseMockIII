@@ -10,7 +10,7 @@ class Profile extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            headerPosts: []
+            userPosts: []
         }
     }
 
@@ -21,7 +21,8 @@ class Profile extends Component {
             res => {
                 this.setState({
                     isLoaded: true,
-                    headerPosts: res.posts
+                    userPosts: res.posts,
+                    user: res.user
                 });
             },
             error => {
@@ -34,7 +35,7 @@ class Profile extends Component {
     }
     
     render() {
-        const { error, isLoaded, headerPosts } = this.state;
+        const { error, isLoaded, userPosts, user } = this.state;
         if (error) {
             return <>Error: {error.message}</>;
         } else if (!isLoaded) {
@@ -42,8 +43,8 @@ class Profile extends Component {
         } else {
             return (
                 <>
-                    <Info />
-                    <Feed posts={headerPosts} />
+                    <Info user={user} />
+                    <Feed posts={userPosts} />
                     <aside></aside>
                 </>
             );

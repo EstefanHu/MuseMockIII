@@ -42,7 +42,7 @@ class Dashboard extends Component {
         } else {
             return (
                 <>
-                    <section></section>
+                    <section className="left" ></section>
                     <Feed posts={headerPosts} />
                     <aside></aside>
                 </>

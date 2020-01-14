@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Info = () => {
+const Info = props => {
   return (
-    <section>
-      <p>Hello from info</p>
+    <section className="left" >
+      <p>{props.user.firstName} {props.user.lastName}</p>
     </section>
   )
 }

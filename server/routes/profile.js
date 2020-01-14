@@ -20,7 +20,17 @@ router.route('/').get((req, res) => {
           "author": "Justin",
           "credibility": 8763
         }
-      ]
+      ],
+      "user": {
+        "firstName": "Estefan",
+        "lastName": "Hu",
+        "email": "estefanhu@gmail.com",
+        "links": [
+          "www.google.com",
+          "www.facebook.com",
+          "www.projectmuse.com"
+        ]
+      }
     });
   } catch(err) {
     res.type('text').status(500).send('Error: ' + err);
