@@ -171,43 +171,9 @@ const PostType = new GraphQLObjectType({
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
+    description: 'Base Queries',
     
     fields: {
-        city: {
-            type: CityType,
-            args: {id: {type: GraphQLID}},
-            resolve(parent, args) {
-                return City.findById(args.id);
-            }
-        },
-        sector: {
-            type: SectorType,
-            args: {id: {type: GraphQLID}},
-            resolve(parent, args) {
-                return Sector.findById(args.id);
-            }
-        },
-        neighborhood: {
-            type: NeighborhoodType,
-            args: {id: {type: GraphQLID}},
-            resolve(parent, args) {
-                return Neighborhood.findById(args.id);
-            }
-        },
-        hub: {
-            type: HubType,
-            args: {id: {type: GraphQLID}},
-            resolve(parent, args) {
-                return Hub.findById(args.id);
-            }
-        },
-        user: {
-            type: UserType,
-            args: {id: {type: GraphQLID}},
-            resolve(parent, args) {
-                return User.findById(args.id);
-            }
-        },
         post: {
             type: PostType,
             args: {id: {type: GraphQLID}},
