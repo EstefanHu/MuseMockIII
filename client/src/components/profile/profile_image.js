@@ -17,7 +17,8 @@ const img = {
   backgroundImage: `url(${Background})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  boxShadow: '5px 5px 5px 0 rgba(0, 0, 0, 0.05)'
+  boxShadow: '5px 5px 5px 0 rgba(0, 0, 0, 0.05)',
+  border: '3px solid lightgrey',
 }
 
 export default ProfileImage;
