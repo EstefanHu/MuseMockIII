@@ -17,7 +17,8 @@ const Info = props => {
 
 const info = {
   backgroundColor: 'white',
-  boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)'
+  boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)',
+  height: 'auto'
 }
 
 const item = {

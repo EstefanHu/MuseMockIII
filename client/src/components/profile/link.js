@@ -4,7 +4,7 @@ const Link = props => {
   return (
     <>
       {props.links.map(link => (
-        <button style={ props.style } >{ link }</button>
+        <button style={ props.style } key={ link } >{ link }</button>
       ))}
     </>
   )

@@ -4,10 +4,10 @@ const Feed = props => {
     return (
         <section id="feed">
             {props.posts.map(item => (
-                <article>
+                <article key={ item.id } >
                     <span>
                         <p>
-                            <a href="javascript:filterGenre()" className="genre">{item.genre}</a> by {item.author}
+                            <a href="/" className="genre">{item.genre}</a> by {item.author}
                         </p>
                         <p>Cred: {item.credibility}</p>
                     </span>

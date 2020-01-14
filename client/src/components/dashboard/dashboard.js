@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Feed from '../layout/feed';
-import Register from './register';
 
 class Dashboard extends Component {
     constructor(props) {

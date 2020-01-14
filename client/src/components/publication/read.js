@@ -4,12 +4,6 @@ import Info from './info';
 import Publication from './publication';
 
 class Read extends Component {
-  constructor(props) {
-    super(props);
-
-
-  }
-
   render() {
     return (
       <>

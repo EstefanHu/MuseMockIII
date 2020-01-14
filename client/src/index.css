@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(230, 230, 230);
 }
 
 nav {
@@ -54,6 +54,7 @@ main {
   border-radius: 5px;
   width: 240px;
   padding: 20px;
+  height: auto;
 }
 
 .left span {

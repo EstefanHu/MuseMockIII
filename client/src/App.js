@@ -3,8 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
-  useHistory
 } from 'react-router-dom';
 import './App.css';
 
@@ -16,7 +14,6 @@ import Create from './components/create/create';
 import Settings from './components/settings/settings';
 import Read from './components/publication/read';
 import UserContext from './contexts/userContext';
-import Notifications from './components/layout/notifications';
 
 class App extends Component {
   constructor(props) {
