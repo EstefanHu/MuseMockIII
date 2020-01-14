@@ -42,7 +42,9 @@ class Dashboard extends Component {
         } else {
             return (
                 <>
+                    <section></section>
                     <Feed posts={headerPosts} />
+                    <aside></aside>
                 </>
             );
         }
