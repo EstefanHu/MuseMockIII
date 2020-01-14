@@ -10,7 +10,7 @@ const Info = props => {
     <section className="left" style={info} >
       <ProfileImage />
       <Name name={ firstName + " " + lastName } />
-      <Link links={ links } />
+      <Link links={ links } style={ item } />
     </section>
   )
 }
@@ -18,6 +18,17 @@ const Info = props => {
 const info = {
   backgroundColor: 'white',
   boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)'
+}
+
+const item = {
+  border: '1px solid lightgrey',
+  borderRadius: '5px',
+  marginTop: '5px',
+  height: '30px',
+  fontSize: '1rem',
+  textAlign: 'center',
+  width: '100%',
+  backgroundColor: 'lightgrey'
 }
 
 export default Info;

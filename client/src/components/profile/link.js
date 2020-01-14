@@ -4,7 +4,7 @@ const Link = props => {
   return (
     <>
       {props.links.map(link => (
-        <span><a href={ link }>{ link }</a></span>
+        <button style={ props.style } >{ link }</button>
       ))}
     </>
   )
