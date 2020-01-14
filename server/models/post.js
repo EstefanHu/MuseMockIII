@@ -7,12 +7,12 @@ const postSchema = new Schema({
         required: true,
         trim: true
     },
-    description: {
+    genre: {
         type: String,
         required: true,
         trim: true
     },
-    genre: {
+    description: {
         type: String,
         required: true,
         trim: true
@@ -21,8 +21,15 @@ const postSchema = new Schema({
         type: String,
         requried: true,
         trim: true
+    },
+    credibility: {
+        type: Number
+    },
+    userId: {
+        type: Number,
+        required: true
     }
-},{
+}, {
     timestamps: true
 });
 

@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 app.use(cors());
 // remove soon
 app.use('/graphql', graphqlHTTP({
-    schema,
+    schema: schema,
     graphiql: true
 }));
 
-const DB_CONNECTION = 'MuseDB';
+const DB_CONNECTION = 'musedb';
 mongoose.connect(`mongodb://localhost/${DB_CONNECTION}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 
 mongoose.connection.once('open', () => {

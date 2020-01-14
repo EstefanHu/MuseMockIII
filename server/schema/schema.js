@@ -155,9 +155,11 @@ const PostType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         title: {type: GraphQLString},
+        genre: {type: GraphQLString},
         description: {type: GraphQLString},
         content: {type: GraphQLString},
         credibility: {type: GraphQLInt},
+        userId: {type: GraphQLInt},
         user: {
             type: UserType,
             resolve(parent, args) {
@@ -209,7 +211,7 @@ const RootQuery = new GraphQLObjectType({
         post: {
             type: PostType,
             args: {id: {type: GraphQLID}},
-            resolve(parents, args) {
+            resolve(parent, args) {
                 return Post.findById(args.id);
             }
         }
@@ -310,15 +312,19 @@ const Mutation = new GraphQLObjectType({
             type: PostType,
             args: {
                 title: {type: new GraphQLNonNull(GraphQLString)},
+                genre: {type: new GraphQLNonNull(GraphQLString)},
                 description: {type: new GraphQLNonNull(GraphQLString)},
                 content: {type: new GraphQLNonNull(GraphQLString)},
+                credibility: {type: new GraphQLNonNull(GraphQLInt)},
                 userId: {type: new GraphQLNonNull(GraphQLID)}
             },
             resolve(parent, args) {
                 let post = new Post({
                     title: args.title,
+                    genre: args.genre,
                     description: args.description,
                     content: args.content,
+                    credibility: args.credibility,
                     userId: args.userId
                 });
                 return post.save();
