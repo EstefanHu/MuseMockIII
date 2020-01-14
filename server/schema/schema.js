@@ -195,6 +195,7 @@ const RootQuery = new GraphQLObjectType({
 
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
+    description: 'Root Mutation',
     
     fields: {
         addCity: {
