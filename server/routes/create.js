@@ -17,7 +17,6 @@ router.route('/createPublication').post((req, res) => {
       .catch(err => {
         res.status(400).send("unable to save to database");
       });
-    console.log(newPost);
   } catch(err) {
     res.type('text').status(500).send('Error: ' + err);
   }
