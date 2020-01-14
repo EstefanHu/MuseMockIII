@@ -176,9 +176,18 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         post: {
             type: PostType,
+            description: 'Single post',
             args: {id: {type: GraphQLID}},
             resolve(parent, args) {
                 return Post.findById(args.id);
+            }
+        },
+        postsInSector: {
+            type: new GraphQLList(PostType),
+            description: 'List of posts for sector',
+            args: {id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return Post.filter(post => post.sectorId === args.id);
             }
         }
     }
