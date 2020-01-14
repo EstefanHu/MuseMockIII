@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const hubSchema = require('./hub').schema;
-const postSchema = require('./post').schema;
 
 const districtSchema = new Schema({
     name: {
@@ -9,8 +8,7 @@ const districtSchema = new Schema({
         required: true,
         trim: true
     },
-    hubs: [hubSchema],
-    posts: [postSchema]
+    hubs: [hubSchema]
 });
 
 module.exports = mongoose.model('District', districtSchema);

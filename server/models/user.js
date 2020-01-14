@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const postSchema = require('./post').schema;
 
 const userSchema = new Schema({
     firstName: {
@@ -31,9 +30,7 @@ const userSchema = new Schema({
         type: Date,
         required: true
     },
-    credibility: Number,
-    posts: [postSchema],
-    archive: [postSchema]
+    credibility: Number
 }, {
     timestamps: true
 });

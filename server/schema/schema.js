@@ -1,4 +1,5 @@
 const graphql = require('graphql');
+
 const City = require('../models/city');
 const Sector = require('../models/sector');
 const Neighborhood = require('../models/neighborhood');

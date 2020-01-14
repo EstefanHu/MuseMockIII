@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const sectorSchema = require('./sector').schema;
-const postSchema = require('./post').schema;
 
 const citySchema = new Schema({
     name: {
@@ -9,8 +8,7 @@ const citySchema = new Schema({
         required: true,
         trim: true
     },
-    sectors: [sectorSchema],
-    posts: [postSchema]
+    sectors: [sectorSchema]
 });
 
 module.exports = mongoose.model('City', citySchema);

@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const userSchema = require('./user').schema;
-const postSchema = require('./post').schema;
 
 const hubSchema = new Schema({
     name: {
@@ -9,9 +7,8 @@ const hubSchema = new Schema({
         required: true,
         trim: true
     },
-    admins: [userSchema],
-    members: [userSchema],
-    posts: [postSchema]
+    neighborhoodId: { type: String },
+    sectorId: { type: String }
 });
 
 module.exports = mongoose.model('Hub', hubSchema);
