@@ -30,10 +30,12 @@ mongoose.connection.once('open', () => {
 
 const dashboardRouter = require('./routes/dashboard');
 const homeRouter = require('./routes/home');
+const profileRouter = require('./routes/profile');
 const createRouter = require('./routes/create');
 
 app.use('/dashboard', dashboardRouter);
 app.use('/home', homeRouter);
+app.use('/profile', profileRouter);
 app.use('/create', createRouter);
 
 const PORT = process.env.PORT || 4000;
