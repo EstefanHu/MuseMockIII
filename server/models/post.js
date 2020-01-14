@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const userSchema = require('./user').schema;
+const hubSchema = require('./hub').schema;
+const neighborhoodSchema = require('./neighborhood').schema;
+const sectorSchema = require('./sector').schema;
+const citySchema = require('./city').schema;
+
 const postSchema = new Schema({
     title: {
         type: String,
@@ -25,10 +31,11 @@ const postSchema = new Schema({
     credibility: {
         type: Number
     },
-    userId: {
-        type: Number,
-        required: true
-    }
+    user: userSchema,
+    hub: hubSchema,
+    neighborhood: neighborhoodSchema,
+    sector: sectorSchema,
+    city: citySchema
 }, {
     timestamps: true
 });
