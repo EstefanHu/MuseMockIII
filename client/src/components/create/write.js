@@ -78,7 +78,7 @@ class Write extends Component {
     render() {
         const { title, genre, location, description, content } = this.state;
         return (
-            <section>
+            <section style={ primary }>
                 <h2 style={header} >Compose Work</h2>
                 <form onSubmit={this.onSubmit} style={createForm}>
                     <input placeholder="Title your masterpiece" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
@@ -100,6 +100,12 @@ class Write extends Component {
             </section>
         )
     }
+}
+
+const primary = {
+    borderRadius: '5px',
+    backgroundColor: 'white',
+    padding: '20px'
 }
 
 const header = {
