@@ -7,7 +7,7 @@ import Link from './link';
 const Info = props => {
   const { firstName, lastName, links } = props.user;
   return (
-    <section className="left" style={info} >
+    <section style={info} >
       <ProfileImage />
       <Name name={ firstName + " " + lastName } />
       <Link links={ links } style={ item } />
