@@ -54,10 +54,13 @@ main {
   width: 240px;
 }
 
+/* NEED TO CONVERT TO INLINE */
 .genre:hover {
   color: rgb(173, 173, 173);
   text-decoration: underline;
 }
+
+/* NEED TO CONVERT TO INLINE */
 
 h2 a:hover {
   color: grey;
