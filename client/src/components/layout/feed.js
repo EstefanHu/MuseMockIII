@@ -10,12 +10,12 @@ const Feed = props => {
     return (
         <section id="feed">
             {props.posts.map(item => (
-                <article key={ item.id } >
+                <article key={ item.id } style={ article } >
                     <span style={ header } >
                         <p>
                             <Genre genre={ item.genre } /> by {item.author}
                         </p>
-                        <p>Cred: {item.credibility}</p>
+                        <Credibility credibility={ item.credibility } />
                     </span>
                     <a href="/post/{item.id}" style={ title } >
                         <Title title={ item.title } />
@@ -25,6 +25,17 @@ const Feed = props => {
             ))}
         </section>
     )
+}
+
+const article = {
+    borderRadius: '5px',
+    width: '600px',
+    margin: '0px auto 35px auto',
+    padding: '20px 25px',
+    boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)',
+    fontSize: '1rem',
+    color: 'rgb(61, 61, 61)',
+    backgroundColor: 'rgb(255, 255, 255)'
 }
 
 const header = {
