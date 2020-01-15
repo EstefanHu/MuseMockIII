@@ -2,15 +2,17 @@ import React from 'react';
 
 import ProfileImage from './profile_image';
 import Name from './name';
+import Email from './email';
 import Link from './link';
 
 const Info = props => {
-  const { firstName, lastName, links } = props.user;
+  const { firstName, lastName, email, links } = props.user;
   return (
     <section className="left" >
       <div style={info} >
         <ProfileImage />
         <Name name={ firstName + " " + lastName } />
+        <Email email={ email } />
         <Link links={ links } style={ item } />
       </div>
     </section>
