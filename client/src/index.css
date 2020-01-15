@@ -54,12 +54,6 @@ main {
   width: 240px;
 }
 
-/* NEED TO CONVERT TO INLINE */
-.genre:hover {
-  color: rgb(173, 173, 173);
-  text-decoration: underline;
-}
-
 aside {
   width: 200px;
 }
