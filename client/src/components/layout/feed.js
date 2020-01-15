@@ -13,7 +13,7 @@ const Feed = props => {
                 <article key={ item.id } style={ article } >
                     <span style={ header } >
                         <p>
-                            <Genre genre={ item.genre } /> by {item.author}
+                            <Genre genre={ item.genre } /> by <Author author={ item.author } />
                         </p>
                         <Credibility credibility={ item.credibility } />
                     </span>
