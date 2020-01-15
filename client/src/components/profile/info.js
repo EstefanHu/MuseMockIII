@@ -22,8 +22,10 @@ const info = {
   backgroundColor: 'white',
   boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)',
   height: 'auto',
+  width: '240px',
   padding: '20px',
   borderRadius: '5px',
+  position: 'fixed'
 }
 
 const item = {
