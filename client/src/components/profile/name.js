@@ -12,10 +12,4 @@ const name = {
   fontWeight: 'bold'
 }
 
-const email = {
-  textAlign: 'center',
-  fontSize: '1.2rem',
-  fontWeight: 'bold'
-}
-
 export default Name;
