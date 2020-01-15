@@ -5,7 +5,6 @@ import Background from '../../imgs/default.jpg';
 const ProfileImage = props => {
   return (
     <div style={img} >
-      {/* <img src={require("../../imgs/default.jpg")} alt="profile image" /> */}
     </div>
   )
 }

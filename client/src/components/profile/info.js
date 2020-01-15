@@ -7,18 +7,23 @@ import Link from './link';
 const Info = props => {
   const { firstName, lastName, links } = props.user;
   return (
-    <section style={info} >
-      <ProfileImage />
-      <Name name={ firstName + " " + lastName } />
-      <Link links={ links } style={ item } />
+    <section className="left" >
+      <div style={info} >
+        <ProfileImage />
+        <Name name={ firstName + " " + lastName } />
+        <Link links={ links } style={ item } />
+      </div>
     </section>
+    
   )
 }
 
 const info = {
   backgroundColor: 'white',
   boxShadow: '12px 12px 12px 0 rgba(0, 0, 0, 0.05)',
-  height: 'auto'
+  height: 'auto',
+  padding: '20px',
+  borderRadius: '5px',
 }
 
 const item = {

@@ -51,13 +51,7 @@ main {
 }
 
 .left {
-  border-radius: 5px;
   width: 240px;
-  padding: 20px;
-}
-
-.left span {
-  display: block;
 }
 
 #feed {
