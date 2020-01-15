@@ -48,7 +48,7 @@ const header = {
 
 const title = {
     color: 'rgb(61, 61, 61)',
-    textDecoration: 'none'
+    textDecoration: 'none',
 }
 
 export default Feed;

@@ -8,7 +8,8 @@ const Description = props => {
 
 const desc = {
   fontSize: '1.1rem',
-  fontWeight: '500'
+  fontWeight: '500',
+  marginTop: '5px'
 }
 
 export default Description;
