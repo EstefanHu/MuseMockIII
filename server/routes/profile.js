@@ -33,6 +33,7 @@ router.route('/').get((req, res) => {
         "firstName": "Estefan",
         "lastName": "Hu",
         "email": "estefanhu@gmail.com",
+        "credibility": 634205,
         "links": [
           "www.google.com",
           "www.facebook.com",
