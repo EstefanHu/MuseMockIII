@@ -8,7 +8,7 @@ import './App.css';
 
 import Navbar from './components/layout/navbar';
 import Dashboard from './components/dashboard/dashboard';
-import Feed from './components/home/home'; // likely will change
+import Home from './components/home/home'; // likely will change
 import Profile from './components/profile/profile';
 import Create from './components/create/create';
 import Settings from './components/settings/settings';
@@ -34,12 +34,11 @@ class App extends Component {
 
             <Switch>
               <Route path='/dashboard' exact>
-                <section className="left"></section>
                 <Dashboard />
                 <aside></aside>
               </Route>
               <Route path='/' exact>
-                <Feed />
+                <Home />
               </Route>
               <Route path='/profile' exact>
                 <Profile />
