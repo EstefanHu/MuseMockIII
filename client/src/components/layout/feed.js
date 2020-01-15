@@ -11,7 +11,7 @@ const Feed = props => {
         <section id="feed">
             {props.posts.map(item => (
                 <article key={ item.id } >
-                    <span>
+                    <span style={ header } >
                         <p>
                             <Genre genre={ item.genre } /> by {item.author}
                         </p>
@@ -25,6 +25,11 @@ const Feed = props => {
             ))}
         </section>
     )
+}
+
+const header = {
+    display: 'flex',
+    justifyContent: 'space-between'
 }
 
 const title = {

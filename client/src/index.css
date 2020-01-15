@@ -78,11 +78,6 @@ h2 a:hover {
   color: grey;
 }
 
-article span {
-  display: flex;
-  justify-content: space-between;
-}
-
 aside {
   width: 200px;
 }
