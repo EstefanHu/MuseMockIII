@@ -33,6 +33,9 @@ const homeRouter = require('./routes/home');
 const profileRouter = require('./routes/profile');
 const createRouter = require('./routes/create');
 
+const devRouter = require('./routes/dev');
+app.use('/dev', devRouter);
+
 app.use('/dashboard', dashboardRouter);
 app.use('/home', homeRouter);
 app.use('/profile', profileRouter);
