@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Genre from './post/genre';
-import Author from './post/author'
 import Credibility from './post/credibility';
 import Title from './post/title';
 import Description from './post/description';
@@ -13,7 +12,7 @@ const Feed = props => {
                 <article key={ item.id } style={ article } >
                     <span style={ header } >
                         <p>
-                            <Genre genre={ item.genre } /> by <Author author={ item.author } />
+                            <Genre genre={ item.genre } /> by { item.author }
                         </p>
                         <Credibility credibility={ item.credibility } />
                     </span>
