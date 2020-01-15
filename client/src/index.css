@@ -54,10 +54,6 @@ main {
   width: 240px;
 }
 
-#feed {
-  width: 600px;
-}
-
 .genre:hover {
   color: rgb(173, 173, 173);
   text-decoration: underline;

@@ -7,7 +7,7 @@ import Description from './post/description';
 
 const Feed = props => {
     return (
-        <section id="feed">
+        <section style={ feed } >
             {props.posts.map(item => (
                 <article key={ item.id } style={ article } >
                     <span style={ header } >
@@ -24,6 +24,10 @@ const Feed = props => {
             ))}
         </section>
     )
+}
+
+const feed = {
+    width: '600px',
 }
 
 const article = {
