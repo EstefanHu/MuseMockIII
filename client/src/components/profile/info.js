@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProfileImage from './profile_image';
-import Name from './name';
-import Email from './email';
-import Credibility from './credibility';
-import Link from './link';
+import ProfileImage from './info/image';
+import Name from './info/name';
+import Email from './info/email';
+import Credibility from './info/credibility';
+import Link from './info/link';
 
 const Info = props => {
   const { firstName, lastName, email, credibility, links } = props.user;

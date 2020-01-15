@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Background from '../../imgs/default.jpg';
+import Background from '../../../imgs/default.jpg';
 
 const ProfileImage = props => {
   return (
