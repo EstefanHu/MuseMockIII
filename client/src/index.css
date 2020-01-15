@@ -60,12 +60,6 @@ main {
   text-decoration: underline;
 }
 
-/* NEED TO CONVERT TO INLINE */
-
-h2 a:hover {
-  color: grey;
-}
-
 aside {
   width: 200px;
 }
