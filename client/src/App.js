@@ -34,7 +34,9 @@ class App extends Component {
 
             <Switch>
               <Route path='/dashboard' exact>
+                <section className="left"></section>
                 <Dashboard />
+                <aside></aside>
               </Route>
               <Route path='/' exact>
                 <Feed />
