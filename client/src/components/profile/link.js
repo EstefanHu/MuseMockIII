@@ -4,10 +4,20 @@ const Link = props => {
   return (
     <>
       {props.links.map(link => (
-        <button style={ props.style } key={ link } >{ link }</button>
+        <button style={ item } key={ link } >{ link }</button>
       ))}
     </>
   )
+}
+
+const item = {
+  border: '1px solid lightgrey',
+  borderRadius: '5px',
+  marginTop: '5px',
+  height: '30px',
+  fontSize: '1rem',
+  width: '100%',
+  backgroundColor: 'lightgrey'
 }
 
 export default Link;

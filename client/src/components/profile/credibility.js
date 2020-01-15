@@ -7,7 +7,6 @@ const Credibility = props => {
 }
 
 const cred = {
-  textAlign: 'center'
 }
 
 export default Credibility;

@@ -7,7 +7,6 @@ const Name = props => {
 }
 
 const name = {
-  textAlign: 'center',
   fontSize: '1.5rem',
   fontWeight: 'bold'
 }

@@ -15,7 +15,7 @@ const Info = props => {
         <Name name={ firstName + " " + lastName } />
         <Email email={ email } />
         <Credibility credibility={ credibility } />
-        <Link links={ links } style={ item } />
+        <Link links={ links }/>
       </div>
     </section>
     
@@ -29,18 +29,8 @@ const info = {
   width: '240px',
   padding: '20px',
   borderRadius: '5px',
-  position: 'fixed'
-}
-
-const item = {
-  border: '1px solid lightgrey',
-  borderRadius: '5px',
-  marginTop: '5px',
-  height: '30px',
-  fontSize: '1rem',
-  textAlign: 'center',
-  width: '100%',
-  backgroundColor: 'lightgrey'
+  position: 'fixed',
+  textAlign: 'center'
 }
 
 export default Info;

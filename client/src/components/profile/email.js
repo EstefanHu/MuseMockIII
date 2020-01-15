@@ -7,7 +7,6 @@ const Email = props => {
 }
 
 const email = {
-  textAlign: 'center',
   fontSize: '.8rem',
 }
 
