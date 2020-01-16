@@ -79,21 +79,26 @@ class Write extends Component {
         const { title, genre, location, description, content } = this.state;
         return (
             <section style={ primary }>
-                <h2 style={header} >Compose Work</h2>
+                <h1 style={header} >Compose Work</h1>
                 <form onSubmit={this.onSubmit} style={createForm}>
+                    <label style={ label } >Title:</label>
                     <input placeholder="Title your masterpiece" type="text" value={title} onChange={this.onChangeTitle} style={input} required />
+                    <span style={ selectLables } >
+                        <p>Select Genre:</p>
+                        <p>Select Publication Location:</p>
+                    </span>
                     <span style={selectHolder} >
                         <select value={genre} onChange={this.onChangeGenre} style={select} required >
-                            <option style={option} default>Genre</option>
                             <option style={option} value="short_story">Short Story</option>
                             <option style={option} value="poem">Poem</option>
                             <option style={option} value="life">Life</option>
                         </select>
                         <select value={location} onChange={this.onChangeLocation} style={select} required >
-                            <option sytle={option} default>Location</option>
                         </select>
                     </span>
+                    <label style={ label } >Description:</label>
                     <textarea placeholder="Write a short description" value={description} onChange={this.onChangeDescription} style={textarea} rows="5" required />
+                    <label style={ label } >Content:</label>
                     <textarea placeholder="Start your publication" value={content} onChange={this.onChangeContent} style={textarea} rows="15" required />
                     <input type="submit" value="Publish!" style={submit} />
                 </form>
@@ -105,7 +110,7 @@ class Write extends Component {
 const primary = {
     borderRadius: '5px',
     backgroundColor: 'white',
-    padding: '20px'
+    padding: '20px 30px',
 }
 
 const header = {
@@ -116,7 +121,7 @@ const header = {
 const createForm = {
     display: 'flex',
     flexDirection: 'column',
-    width: '600px',
+    width: '540px',
 }
 
 const input = {
@@ -162,9 +167,21 @@ const selectHolder = {
     marginBottom: '15px'
 }
 
+const selectLables = {
+    display: 'grid',
+    gridTemplateColumns: '51% 49%',
+    marginBottom: '3px',
+    paddingLeft: '3px'
+}
+
 const option = {
     backgroundColor: '#fff',
     fontSize: '1.6rem',
+}
+
+const label = {
+    marginBottom: '3px',
+    marginLeft: '3px'
 }
 
 export default withRouter(Write);
