@@ -47,6 +47,11 @@ router.route('/').get((req, res) => {
               "Fremont",
               "Capital Hill"
           ],
+          "hubs": [
+              "Write Away!",
+              "UW Poetry Society",
+              "AU"
+          ],
           "notifications": [
               "Sami liked your post",
               "Your post got 10k likes"
