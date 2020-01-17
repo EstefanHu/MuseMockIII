@@ -7,11 +7,6 @@ const Navigation = props => {
         <span style={ navItem }><h3 style={ navHead } >Sectors</h3></span>
         {props.sectors.map(sector => (
           <button style={ navItem }>{ sector }</button>
-          { sector = 'University District' ? (
-            <h1>Worked</h1>
-          ) : (
-            <p>broken</p>
-          )}
         ))}
       </div>
     </section>

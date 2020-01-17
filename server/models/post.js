@@ -25,6 +25,7 @@ const postSchema = new Schema({
     credibility: {
         type: Number
     },
+    isActive: { type: Boolean },
     userId: { type: String },
     hubId: { type: String },
     neighborhoodId: { type: String },
