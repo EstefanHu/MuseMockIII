@@ -46,4 +46,13 @@ router.route('/').get((req, res) => {
   }
 });
 
+router.route('/test').get((req, res) => {
+  try {
+    
+    res.json({})
+  } catch(err) {
+    res.type('text').status(500).send('Error: ' + err);
+  }
+});
+
 module.exports = router;
