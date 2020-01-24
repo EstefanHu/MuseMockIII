@@ -8,7 +8,8 @@ const hubSchema = new Schema({
         trim: true
     },
     neighborhoodId: { type: String },
-    sectorId: { type: String }
+    sectorId: { type: String },
+    cityId: { type: String }
 });
 
 module.exports = mongoose.model('Hub', hubSchema);
