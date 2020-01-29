@@ -152,7 +152,7 @@ const UserType = new GraphQLObjectType({
 
 const PostType = new GraphQLObjectType({
     name: 'Post',
-    
+
     fields: () => ({
         id: {type: GraphQLID},
         title: {type: GraphQLString},
@@ -173,7 +173,7 @@ const PostType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     description: 'Base Queries',
-    
+
     fields: {
         post: {
             type: PostType,
@@ -190,6 +190,22 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent, args) {
                 return Post.filter(post => post.sectorId === args.id);
             }
+        },
+        user: {
+            type: UserType,
+            description: 'single user',
+            args:{id: {type: GraphQLID}},
+            resolve(parent, args) {
+                return User.findById(args.id);
+            }
+        },
+        userByEmail: {
+            type: UserType,
+            description: 'single user by email',
+            args:{email: {type: GraphQLString}},
+            resolve(parent, args) {
+                return User.find(args.email);
+            }
         }
     }
 });
@@ -197,7 +213,7 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
     description: 'Root Mutation',
-    
+
     fields: {
         addCity: {
             type: CityType,
@@ -276,11 +292,13 @@ const Mutation = new GraphQLObjectType({
                 password: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
+                let currentDate = new Date();
                 let user = new User({
                     firstName: args.firstName,
                     lastName: args.lastName,
                     email: args.email,
-                    password: args.password
+                    password: args.password,
+                    createdAt: currentDate
                 });
                 return user.save();
             }
