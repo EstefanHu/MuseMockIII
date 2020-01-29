@@ -44,6 +44,7 @@ class Home extends Component {
         } else {
             return (
                 <>
+                    <section className="left" />
                     <Feed posts={feedPosts} />
                     <Notifications content={notifications} />
                 </>
