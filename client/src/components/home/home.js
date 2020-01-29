@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Navigation from './navigation';
 import Feed from '../layout/feed';
 import Notifications from '../layout/notifications';
 
@@ -12,7 +11,6 @@ class Home extends Component {
             error: null,
             isLoaded: false,
             feedPosts: [],
-            sectors: [],
             notifications: []
         }
     }
@@ -25,7 +23,6 @@ class Home extends Component {
                     this.setState({
                         isLoaded: true,
                         feedPosts: res.posts,
-                        sectors: res.sectors,
                         notifications: res.notifications
                     });
                 },
@@ -39,7 +36,7 @@ class Home extends Component {
     }
 
     render() {
-        const { error, isLoaded, sectors, feedPosts, notifications } = this.state;
+        const { error, isLoaded, feedPosts, notifications } = this.state;
         if (error) {
             return <>Error: {error.message}</>;
         } else if (!isLoaded) {
@@ -47,7 +44,6 @@ class Home extends Component {
         } else {
             return (
                 <>
-                    <Navigation sectors={sectors} />
                     <Feed posts={feedPosts} />
                     <Notifications content={notifications} />
                 </>
