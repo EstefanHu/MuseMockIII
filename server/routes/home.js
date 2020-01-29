@@ -42,11 +42,6 @@ router.route('/').get((req, res) => {
               "lastName": "Hu",
               "credibility": 49343
           },
-          "sectors": [
-              "University District",
-              "Fremont",
-              "Capital Hill"
-          ],
           "hubs": [
               "Write Away!",
               "UW Poetry Society",
